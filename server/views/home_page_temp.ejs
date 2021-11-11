@@ -1,0 +1,49 @@
+<!--File Name: home_page_temp.ejs
+    Student Name: Michael-Angelo Dinuccio
+    StudentID: 301177707
+    Date: September 30th, 2021
+    -->
+
+<%- include Partials/header.ejs%>
+
+  <%- include Partials/main_nav.ejs%>
+
+    <!--Main Content-->
+    <div class="pages">
+      <main class="container">
+        <div class="jumbotron bg-light p-5 rounded-lg m-3" id="jum_home">
+          <h1 class="display-4">
+            <%= title %>
+          </h1>
+          <hr>
+
+          <!--Home Page Content-->
+          <div id="page">
+            <br>
+            <img src="Assets/images/welcome.jpg" id="welcome">
+            <br>
+            <div class="home_box">
+              <h4>Welcome to my Portfolio!</h4>
+              <br>
+              <p> &nbsp I am currently a Software Engineering Student and an aspiring Software Developer. Thank you for
+                taking the time to
+                review my Portfolio. To learn more about me, head to the about me page. If you're looking for my
+                previous work, check out
+                the projects page. For services you can go to the services page. To contact me go to the contact me
+                page.
+              </p>
+              <br>
+              <h4>Mission Statement:</h4>
+              <p> &nbsp Develop and Design applications that meets your needs and look amazing.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <br>
+      <br>
+      <br>
+
+      <%- include Partials/bottom_nav.ejs%>
+
+        <%- include Partials/footer.ejs%>

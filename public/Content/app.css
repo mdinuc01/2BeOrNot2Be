@@ -1,0 +1,187 @@
+/* <   File Name: app.css
+    Student Name: Michael-Angelo Dinuccio
+    StudentID: 301177707
+    Date: September 30th, 2021 */
+
+/*Custom CSS goes here*/
+@font-face {
+  font-family: 'bebas_neuebold';
+  src: url('bebasneue-bold-webfont.woff2') format('woff2'),
+       url('bebasneue-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body{
+  background-color: #3C413D;
+}
+
+main{
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
+    display: table;
+}
+
+#nav_Name{
+  position: relative;
+  left: 10px;
+}
+.navbar-expand-lg{
+  position: sticky;
+  top:0px;
+  z-index: 20;
+}
+
+#logo{
+  height: 80px;
+  width: 80px;
+  border-radius: 100px;
+}
+
+
+a{
+  font-family: bebas_neuebold;
+  font-stretch: expanded;
+}
+
+.jumbotron{
+  font-family: bebas_neuebold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  
+  
+}
+
+#jum_home{
+  height: 860px
+}
+
+ .pages {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ label{
+  display: table-row;
+   position: relative;
+ }
+
+input { 
+  display: table-cell;
+  position: relative;
+  left: 150px;
+  bottom: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ textarea{
+  position: relative;
+   right: 50px;
+ }
+
+.button {
+ margin: 5px;
+  position: relative;
+  left: 0px;
+}
+
+#welcome{
+  width: 60%;
+  height: 20%;
+  border-radius: 10px;
+  position: relative;
+  left: 250px;
+  border: #3C413D  1px solid;
+}
+
+.home_box{
+  background-color:  #3C413D ;
+  height: 55%;
+  width: 60%;
+  z-index: 1;
+  position: relative;
+  top: 50px;
+  left: 250px;
+  border-radius: 10px;
+  border: 1px black solid;
+  padding: 25px;
+  color: white;
+}
+
+p, li{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.hover:hover {
+    background-color: #FFFFC2;
+    color: #3C413D ;
+}
+
+#intro{
+   color: #DCDC95;
+    text-align: justify;
+}
+
+p.hover {
+    width: -moz-fit-content;
+    display: inline;
+    position: relative;
+    left: 180px;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+.hover {
+	border-style: groove;
+	background-color: #336699;
+	color: #394d63;
+}
+
+
+
+label{
+  font-family: bebas_neuebold;
+  font-size: 21px;
+  position: relative;
+  left: 30px;
+  top: 11px;
+}
+table{
+  font-family: verdana;
+}
+
+.form-control{
+  width: 60%;
+}
+
+#addsurvey{
+  position: relative;
+  left: 100px;
+  width: 130px;
+}
+
+#slide{
+  background: #DBDED5;
+  position: absolute;
+  right: 100px;
+  top: 70px;
+  padding: 10px;
+  border-radius: 5px;
+  display:none;
+
+}
+#displayName.hover{
+  color: #DBDED5;
+}
+
+.navbart, .moved{
+  position: relative;
+  left: -80px;
+}
+
+li{
+  text-decoration: none;
+  color: #DBDED5;
+}

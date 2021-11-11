@@ -1,11 +1,17 @@
 #!/usr/bin/env node
+  
+/* <   File Name: server.js
+    Student Name: Michael-Angelo Dinuccio
+    StudentID: 301177707
+    Date: September 30th, 2021 */
+
 
 /**
  * Module dependencies.
  */
 
-var app = require('./app');
-var debug = require('debug')('2beornot2be:server');
+var app = require('./server/config/app');
+var debug = require('debug')('portfolio:server');
 var http = require('http');
 
 /**
@@ -34,7 +40,7 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  port = parseInt(val, 10);
 
   if (isNaN(port)) {
     // named pipe
