@@ -1,0 +1,34 @@
+<%- include ../Partials/header.ejs%>
+
+<%- include ../Partials/main_nav.ejs%>
+
+
+<div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid">
+    <div class="row">
+        <div class="offset-md-3 col=md-6"></div>
+        <h1><%= title %></h1>
+        <br>
+        <br>
+        <form class="form"  method="POST">
+        <div class="form-group">
+        <h2 style="font-family: verdana;"><%= survey.name%></h2>
+        
+        <h2 style="font-family: verdana;"><%= survey.q1%></h2>
+        <textarea class="form-control"></textarea>
+        <h2 style="font-family: verdana;"><%= survey.q2%></h2>
+        <textarea class="form-control"></textarea>
+        <h2 style="font-family: verdana;"><%= survey.q3%></h2>
+        <textarea class="form-control"></textarea>
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
+        <a href="/survey-list" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</a>
+    </div>
+</div>
+    </form>
+    
+
+<%- include ../Partials/bottom_nav.ejs%>  
+
+<%- include ../Partials/footer.ejs%>  

@@ -30,8 +30,9 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newSurvey = Survey({
         "name": req.body.name,
-        "email": req.body.email,
-        "number": req.body.number
+        "q1": req.body.q1,
+        "q2": req.body.q2,
+        "q3": req.body.q3
     });
 
     Survey.create(newSurvey, (err, Survey) => {
@@ -94,6 +95,50 @@ module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
     Survey.remove({_id: id}, (err) => {
+        if(err)
+        {
+            console.log(err);
+            res.render(err);
+        }
+        else
+        {
+            //refresh the survey-list
+            res.redirect('/survey-list');
+        }
+    });
+}
+
+module.exports.displayViewPage = (req, res, next) => {
+    let id = req.params.id;
+
+    Survey.findById(id, (err, surveyToView) => {
+        if(err){
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            //show the edit view
+            res.render('survey/view', 
+            {title: 'Survey', 
+            survey: surveyToView,
+            displayName: req.user ? req.user.displayName : ''});
+        }
+    });
+}
+
+module.exports.processViewPage = (req, res, next) => {
+    let id = req.params.id
+
+    let updatedSurvey = Survey({
+        "_id" : id,
+        "name": req.body.name,
+        "q1": req.body.q1,
+        "q2": req.body.q2,
+        "q3": req.body.q3
+    });
+
+    Survey.updateOne({_id: id}, updatedSurvey, (err) => {
         if(err)
         {
             console.log(err);

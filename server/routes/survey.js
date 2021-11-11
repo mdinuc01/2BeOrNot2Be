@@ -33,6 +33,12 @@ router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
 /* POST Route for processing the Edit Page - UPDATE Operation */
 router.post('/edit/:id', surveyController.processEditPage);
 
+/* GET Route for displaying the View Page - UPDATE Operation */
+router.get('/view/:id', surveyController.displayViewPage);
+
+/* POST Route for processing the View Page - UPDATE Operation */
+router.post('/view/:id', surveyController.processViewPage);
+
 /* GET Route to perform Deleteion - DELETE Operation */
 router.get('/delete/:id', requireAuth, surveyController.performDelete);
 

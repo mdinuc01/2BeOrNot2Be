@@ -19,8 +19,7 @@
                     <!-- Header Row-->
                     <tr>
                         <th class="text-center" scope="col-1">Name</th>
-                        <th class="text-center" scope="col-1">Email</th>
-                        <th class="text-center" scope="col-1">Phone Number</th>
+                        <th class="text-center" scope="col-1">Survey Link</th>
                         <% if(typeof displayName=='string' && displayName) { %>
                             <th class="text-center" scope="col-1"></th>
                             <th class="text-center" scope="col-1"></th>
@@ -34,15 +33,14 @@
                                 <%= surveyList[count].name %>
                             </td>
                             <td class="class text-center col-1">
-                                <%= surveyList[count].email %>
-                            </td>
-                            <td class="class text-center col-1">
-                                <%= surveyList[count].number %>
-                            </td>
+                                    <a href="/survey-list/view/<%= surveyList[count].id %>"
+                                        style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
+                                        class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
+                                        <b>View Survey</b></a>
 
                             <% if(typeof displayName=='string' && displayName) { %>
                                 <td class="text-center col-1">
-                                    <a href="/survey-list/edit/<%= surveyList[count].id %>"
+                                    <a href="/survey-list/view/<%= surveyList[count].id %>"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
                                         class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i>
                                         <b>Update</b></a>
