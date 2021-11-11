@@ -32,8 +32,12 @@
           </li>
           
           <% } else { %>
-            <li class="nav-item navbart"><a href="/login" class="nav-link">
-                <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+             <% if (title=="Login" ) { %>
+              <li class="nav-item navbart"><a href="/login" class="nav-link active">
+              <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+                <% } else { %>
+                  <a class="nav-link navbart" href="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+                  <% } %>
             <% } %>
 
             <div id="slide">
