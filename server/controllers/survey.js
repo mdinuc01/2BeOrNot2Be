@@ -118,7 +118,7 @@ module.exports.displayViewPage = (req, res, next) => {
         }
         else
         {
-            //show the edit view
+            //show the view page
             res.render('survey/view', 
             {title: 'Survey', 
             survey: surveyToView,
