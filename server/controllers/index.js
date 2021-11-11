@@ -11,7 +11,7 @@ let User = userModel.User; //alias
 
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('home_page_temp.ejs', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
+    res.render('home_page.ejs', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
 };
 
 module.exports.displayLoginPage = (req, res, next) => {

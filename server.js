@@ -1,11 +1,5 @@
 #!/usr/bin/env node
   
-/* <   File Name: server.js
-    Student Name: Michael-Angelo Dinuccio
-    StudentID: 301177707
-    Date: September 30th, 2021 */
-
-
 /**
  * Module dependencies.
  */

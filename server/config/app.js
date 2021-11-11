@@ -1,7 +1,3 @@
-/* <   File Name: app.js
-    Student Name: Michael-Angelo Dinuccio
-    StudentID: 301177707
-    Date: October 10th, 2021 */
 
 //installed 3rd party packages
 let createError = require('http-errors');

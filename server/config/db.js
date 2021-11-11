@@ -1,7 +1,3 @@
-/* <   File Name: db.js
-    Student Name: Michael-Angelo Dinuccio
-    StudentID: 301177707
-    Date: October 10th, 2021 */
 
 module.exports = 
 {
