@@ -1,3 +1,9 @@
+  /*  
+    File Name: user.js
+    Group 2: 2BeOrNot2Be
+    
+     */
+
 //require modules for the user model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');

@@ -1,3 +1,9 @@
+  /*  
+    File Name: app.js
+    Group 2: 2BeOrNot2Be
+    
+     */
+
 //IIFE -- Immediately Invoked Fucntion Expression
 (function(){
 
