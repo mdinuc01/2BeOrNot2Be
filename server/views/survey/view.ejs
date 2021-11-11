@@ -3,7 +3,7 @@
 <%- include ../Partials/main_nav.ejs%>
 
 
-<div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid">
+<div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid jum">
     <div class="row">
         <div class="offset-md-3 col=md-6"></div>
         <h1><%= title %></h1>
@@ -11,13 +11,13 @@
         <br>
         <form class="form"  method="POST">
         <div class="form-group">
-        <h2 style="font-family: verdana;"><%= survey.name%></h2>
+        <h2><%= survey.name%></h2>
         
-        <h2 style="font-family: verdana;"><%= survey.q1%></h2>
+        <h4 style="font-family: verdana;" class="questions"><%= survey.q1%></h4>
         <textarea class="form-control"></textarea>
-        <h2 style="font-family: verdana;"><%= survey.q2%></h2>
+        <h4 style="font-family: verdana;" class="questions"><%= survey.q2%></h4>
         <textarea class="form-control"></textarea>
-        <h2 style="font-family: verdana;"><%= survey.q3%></h2>
+        <h4 style="font-family: verdana;"class="questions"><%= survey.q3%></h4>
         <textarea class="form-control"></textarea>
         </div>
         <br>

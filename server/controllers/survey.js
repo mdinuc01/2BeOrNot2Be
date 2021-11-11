@@ -73,8 +73,9 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedSurvey = Survey({
         "_id" : id,
         "name": req.body.name,
-        "email": req.body.email,
-        "number": req.body.number
+        "q1": req.body.q1,
+        "q2": req.body.q2,
+        "q3": req.body.q3
     });
 
     Survey.updateOne({_id: id}, updatedSurvey, (err) => {
