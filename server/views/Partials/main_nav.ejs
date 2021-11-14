@@ -1,4 +1,5 @@
 <!-- Main Navbar -->
+ 
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/home"><img src="/Assets/images/logo.png" id="logo">
@@ -40,12 +41,22 @@
                   <% } %>
             <% } %>
 
-            <div id="slide">
+            
+              <% if(typeof displayName=='string' && displayName && title!="Register") { %>
+                <div id="slide">
               <ul>
-              <li><a href="/edit/"><i class="fas fa-edit"></i>Edit User Profile</a></li>
+              <li>
+                <a href="/edit-user/<%=id%>"><i class="fas fa-edit"></i>Edit User Profile</a>
+                </li>
+                <li>
+                <a href="/edit-user-pass/<%=id%>"><i class="fas fa-key"></i>Change Password</a>
+                </li>
               <li><a href="/logout">
                 <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li></li>
               </ul>
+              <% } else { %>
+
+              <% } %>
             </div>
 
     </div>

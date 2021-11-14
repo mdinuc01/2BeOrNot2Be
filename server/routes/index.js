@@ -7,6 +7,7 @@
 let express = require('express');
 let router = express.Router();
 
+
 let indexController = require('../controllers/index');
 
 /* GET home page. */
@@ -27,13 +28,19 @@ router.get('/register', indexController.displayRegisterPage);
 /* POST Route for processing the Register Page*/
 router.post('/register', indexController.processRegisterPage);
 
-/* GET Route to perform UserLogout*/
+/* GET Route to perform User Logout*/
 router.get('/logout', indexController.performLogout);
 
- // /* GET Route to perform UserLogout*/
-router.get('/edit', indexController.displayEditPage);
+ // /* GET Route to perform edit User*/
+router.get('/edit-user/:id', indexController.displayEditPage);
 
-//* POST Route to perform UserLogout*/
-router.post('/edit', indexController.processEditPage);
+//* POST Route to perform edit user*/
+router.post('/edit-user/:id', indexController.processEditPage);
+
+ // /* GET Route to perform edit User*/
+ router.get('/edit-user-pass/:id', indexController.displayEditPassPage);
+
+ //* POST Route to perform edit user*/
+ router.post('/edit-user-pass/:id', indexController.processEditPassPage);
 
 module.exports = router;

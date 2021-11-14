@@ -69,9 +69,13 @@ label {
 input {
   display: table-cell;
   position: relative;
-  left: 150px;
+  left: 50%;
   bottom: 24px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.inputAreas{
+  left:13%;
 }
 
 textarea {
@@ -212,7 +216,7 @@ textarea{
     position: absolute;
     left: 84%;
     top: 70px;
-    padding: 10px;
+    padding: 5px;
     width: 170px;
     border-radius: 5px;
     display:none; 
@@ -220,4 +224,11 @@ textarea{
     z-index:2;
   
   }
+}
+
+#passwordError,#passwordError2, #emailError{
+  position:relative;
+  left:15%;
+  display: hidden;
+  color: red;
 }

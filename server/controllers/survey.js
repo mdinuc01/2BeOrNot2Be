@@ -17,20 +17,35 @@ module.exports.displaySurveyList = (req, res, next) => {
         {
             return console.error(err);    
         }
-        else
-        {
-        res.render('survey/list', 
+        if (!req.user){
+            res.render('survey/list', 
         {title: 'Surveys', 
-        surveyList: surveyList, 
+        surveyList: surveyList,
         displayName: req.user ? req.user.displayName : ''});
         }
+        else{
+            res.render('survey/list', 
+        {title: 'Surveys', 
+        surveyList: surveyList,
+        id: req.user.id,
+        displayName: req.user ? req.user.displayName : ''});
+        }
+        
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
+    if (!req.user){
     res.render('survey/add', 
     {title: 'Add Survey',
     displayName: req.user ? req.user.displayName : ''})
+}
+    else{
+    res.render('survey/add', 
+    {title: 'Add Survey',
+    id: req.user.id,
+    displayName: req.user ? req.user.displayName : ''})
+}
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -68,6 +83,7 @@ module.exports.displayEditPage = (req, res, next) => {
             res.render('survey/edit', 
             {title: 'Edit Survey', 
             survey: surveyToEdit,
+            id: req.user.id ? id:" ",
             displayName: req.user ? req.user.displayName : ''});
         }
     });
@@ -125,14 +141,23 @@ module.exports.displayViewPage = (req, res, next) => {
         }
         else
         {
-            //show the view page
-            res.render('survey/view', 
-            {title: 'Survey', 
-            survey: surveyToView,
-            displayName: req.user ? req.user.displayName : ''});
+            if (!req.user){
+                res.render('survey/view', 
+                {title: 'Survey',
+                survey: surveyToView,
+                displayName: req.user ? req.user.displayName : ''})
+            }
+                else{
+                res.render('survey/view', 
+                {title: 'Survey',
+                survey: surveyToView,
+                id: req.user.id,
+                displayName: req.user ? req.user.displayName : ''})
+            }
         }
     });
 }
+
 
 module.exports.processViewPage = (req, res, next) => {
     let id = req.params.id

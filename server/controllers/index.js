@@ -14,10 +14,21 @@ let passport = require('passport');
 let userModel = require('../models/user');
 let User = userModel.User; //alias
 
+let Survey = require('../models/survey');
+
 
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('home_page.ejs', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
+    if (!req.user){
+    res.render('home_page.ejs', {
+        title: 'Home', 
+        displayName: req.user ? req.user.displayName : ''});
+    }
+    else{
+        res.render('home_page.ejs', {title: 'Home', 
+        id: req.user.id,
+        displayName: req.user ? req.user.displayName : ''});
+    }
 };
 
 module.exports.displayLoginPage = (req, res, next) => {
@@ -32,6 +43,7 @@ module.exports.displayLoginPage = (req, res, next) => {
     }
     else
     {
+         
         return res.redirect('/');
     }
 }
@@ -49,12 +61,19 @@ module.exports.processLoginPage = (req, res, next) => {
             return res.redirect('/login');
         }
         req.login(user, (err) => {
+            Survey.find((err, surveyList) => {
             if (err)
             {
                 return next(err);
             }
-            return res.redirect('/survey-list');
-        });
+            return res.render('survey/list',
+            {title: 'Surveys', 
+            surveyList: surveyList,
+            id: req.user.id,
+            displayName: req.user ? req.user.displayName : ''});
+            }
+            )    
+        }); 
     })(req, res, next);
 }
 
@@ -95,12 +114,15 @@ module.exports.processRegisterPage = (req, res, next) =>{
                 );
                 console.log('Error: User Already Exists!')
             }
+            else{
+                
             return res.render('auth/register', 
             {
                 title: 'Register',
                 messages: req.flash('registerMessage'),
                 displayName: req.user ? req.user.displayName : ''
             });
+        }
         }
         else
         {
@@ -120,8 +142,7 @@ module.exports.performLogout = (req, res, next) =>{
 }
 
 module.exports.displayEditPage = (req, res, next) => {
-    let id = req.user.id;
-    console.log(id);
+ let id = req.user.id;
 
     User.findById(id, (err, userToEdit) => {
         if(err){
@@ -131,24 +152,24 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('auth/edit', 
-            {title: 'Edit User', 
-            users: userToEdit,
-            id: id,
+            res.render('auth/editUser', 
+            {title: 'Edit User Information', 
+            user: userToEdit,
+            id: req.user.id ? id:" ",
             displayName: req.user ? req.user.displayName : ''});
         }
     });
 }
 
     module.exports.processEditPage = (req, res, next) => {
-        let id = req.params.id
+        let id = req.user.id;
     
         let updatedUser = new User({
             "_id" : id,
-            "username": req.body.username,
-            "email": req.body.email,
-            "displayName": req.body.displayName,
-            "password": req.body.password
+            username: req.body.username, 
+            email: req.body.email,
+            displayName: req.body.displayName
+            
         });
     
         User.updateOne({_id: id}, updatedUser, (err) => {
@@ -162,6 +183,55 @@ module.exports.displayEditPage = (req, res, next) => {
                 //refresh the survey-list
                 res.redirect('/survey-list');
             }
-        });
+    });
     }
+
+    module.exports.displayEditPassPage = (req, res, next) => {
+        let id = req.user.id;
+       
+           User.findById(id, (err, userToEdit) => {
+               if(err){
+                   console.log(err);
+                   res.end(err);
+               }
+               else
+               {
+                   //show the edit view
+                   res.render('auth/editUserPass', 
+                   {title: 'Change Password', 
+                   user: userToEdit,
+                   id: req.user.id ? id:" ",
+                   displayName: req.user ? req.user.displayName : ''});
+               }
+           });
+       }
+
+    module.exports.processEditPassPage = (req, res, next) => {
+
+        User.findOne({ id: req.user.id },(err, user) => {
+            // Check if error connecting
+            if (err) {
+              res.json({ success: false, message: err }); // Return error
+            } else {
+              // Check if user was found in database
+              if (!user) {
+                console.log(err);
+              } else {
+                user.changePassword(req.body.oldpassword, req.body.newpassword, function(err) {
+                   if(err) {
+                    console.log(err);
+                    res.render('auth/editUserPass', 
+                   {title: 'Change Password', 
+                   id: req.user.id,
+                   message: 'Password is Incorrect, please and try again',
+                   displayName: req.user ? req.user.displayName : ''});
+                            }
+                   else {
+                    res.redirect('/survey-list')
+                   }
+                 })
+              }
+            }
+          });  
+         };
 

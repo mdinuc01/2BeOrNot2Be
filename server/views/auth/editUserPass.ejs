@@ -1,0 +1,65 @@
+    <!--
+    File Name: edit.ejs
+    Group 2: 2BeOrNot2Be 
+    -->
+    
+
+<%- include ../Partials/header.ejs%>
+<%- include ../Partials/main_nav.ejs%>
+
+<main class="container">
+<!--Message Area-->
+<div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid">
+<div class="row">
+    <div class="offset-md-4 col-md-4">
+        <h1><%= title %></h1>
+        <form class="form"  method="POST">
+        <div class="form-group">
+
+            <fieldset class="form-group">
+                <label for="oldpassword">Old Password: </label>
+                <input type="password" class="form-control"
+                name="oldpassword" placeholder="Enter new password"
+                id="oldpassword">
+            </fieldset>
+
+            <% if (typeof message=="string") { %>
+            <div>
+                <h5 id="passwordError2" style="font-size: medium;"><%=message%></h5>
+            </div>
+            <% } else { %>
+            <% } %>
+
+            <fieldset class="form-group">
+                <label for="newpassword">New Password: </label>
+                <input type="password" class="form-control"
+                name="newpassword" placeholder="Enter new password"
+                id="newpassword">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="newpassword2">Confirm Password:    </label>
+                <input type="password" class="form-control"
+                name="newpassword2" placeholder="Confirm"
+                id="newpassword2">
+            </fieldset>
+
+            <div>
+            <span id="passwordError"></span>
+            </div>
+            <br>
+            <br>
+            <fieldset class="form-group text-right">
+                <input type="submit" class="btn btn-success" value="Update" id="passBut">
+                <a href="/">
+                <input type="button" class="btn btn-warning" value="Cancel"></a>
+            </fieldset>
+
+        </form>
+    </div>
+    </div>
+</div>
+</main>
+<%- include ../Partials/bottom_nav.ejs%>  
+<%- include ../Partials/footer.ejs%>  
+<script src="/Scripts/editUserPass.js"></script>

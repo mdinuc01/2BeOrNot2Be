@@ -4,7 +4,6 @@
     
      */
 
-//IIFE -- Immediately Invoked Fucntion Expression
 (function(){
 
     function Start()
