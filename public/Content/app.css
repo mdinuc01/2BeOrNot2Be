@@ -69,9 +69,10 @@ label {
 input {
   display: table-cell;
   position: relative;
-  left: 50%;
+  left: 80%;
   bottom: 24px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 5px;
 }
 
 .inputAreas{
@@ -176,8 +177,7 @@ table {
 li, ul {
   text-decoration: none;
   color: #616657;
-  list-style: none;
-  
+  list-style: none;  
 }
 
 .jum {
@@ -212,23 +212,143 @@ textarea{
     left: -80px;
   }
    #slide{
-    background: #DBDED5;
+    background: #212529;
     position: absolute;
     left: 84%;
     top: 70px;
-    padding: 5px;
-    width: 170px;
+    width: 180px;
     border-radius: 5px;
     display:none; 
     border: #394d63 solid 1px;
     z-index:2;
+    text-align: center;
   
   }
+
+  .slideText{
+  position: relative;
+  right: 10%;
+  color: #9B9D9E;
+  text-decoration: none;
+}
+.slideText.hover{
+  color: #d4d4d4;
+}
+input {
+  display: table-cell;
+  position: relative;
+  left: 50%;
+  bottom: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#passwordError,#passwordError2, #emailError{
+}
+
+#passwordError,#passwordError2,#passwordError3, #emailError, #usernameError, #nameError{
   position:relative;
   left:15%;
   display: hidden;
   color: red;
+}
+
+  .slideText{
+  position: relative;
+  color: #9B9D9E;
+  text-decoration: none;
+}
+
+.slideText.hover{
+    color: #d4d4d4;
+}
+
+#saInput, #mcInput, #typeInput {
+  display: inline;
+  position: relative;
+  left: 20%;
+  bottom: 40px;
+}
+
+#mc, #sa {
+  position: relative;
+  left: 21%;
+  bottom: 40px;
+}
+#typeTitle {
+  position: relative;
+  left: 12%;
+  bottom: 25px;
+  font-family: bebas_neuebold;
+}
+
+#numTitle{
+  position: relative;
+  left: 35%;
+  bottom: 113px;
+  font-family: bebas_neuebold;
+}
+
+#numOfQuestions{
+  position: relative;
+  left: 47%;
+  bottom: 125px;
+}
+
+#expireTitle{
+  position: relative;
+  left: 55%;
+  bottom: 177px;
+  width: 160px;
+  font-family: bebas_neuebold;
+}
+
+#expiry{
+  position: relative;
+   bottom: 214px;
+   left: 67%;
+}
+#q1TextField, #q2TextField,
+ #q3TextField, #q4TextField,
+  #q5TextField, #q6TextField, 
+  #q7TextField, #q8TextField,
+   #q9TextField, #q10TextField{
+  position: relative;
+  bottom: 0px;
+  left: 20px;
+}
+
+#child{
+  position: relative; 
+  left: 20%;
+}
+
+#q1A1, #q1A2, #q1A3, #q1A4,
+#q2A1, #q2A2, #q2A3, #q2A4,
+#q3A1, #q3A2, #q3A3, #q3A4,
+#q4A1, #q4A2, #q4A3, #q4A4,
+#q5A1, #q5A2, #q5A3, #q5A4,
+#q6A1, #q6A2, #q6A3, #q6A4,
+#q7A1, #q7A2, #q7A3, #q7A4,
+#q8A1, #q8A2, #q8A3, #q8A4,
+#q9A1, #q9A2, #q9A3, #q9A4,
+#q10A1, #q10A2, #q10A3, #q10A4{
+  position: relative; 
+  bottom: 0px;
+  left: 2%;
+  width: 58.5%
+}
+
+.viewA{
+position: relative; 
+left: 300px;
+top: 39px;
+}
+
+#viewLabels{
+  position: relative;
+  left: 280px;
+}
+
+.questionLabels{
+  position: relative;
+  left: 250px;
 }

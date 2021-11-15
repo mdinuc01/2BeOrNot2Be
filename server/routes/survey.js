@@ -31,7 +31,7 @@ router.get('/', surveyController.displaySurveyList);
 router.get('/add', requireAuth, surveyController.displayAddPage);
 
 /* POST Route for processing the Add Page - CREATE Operation */
-router.post('/add', requireAuth, surveyController.processAddPage);
+router.post('/add/:type/:num/:expires', requireAuth, surveyController.processAddPage);
 
 /* GET Route for displaying the Edit Page - UPDATE Operation */
 router.get('/edit/:id', requireAuth, surveyController.displayEditPage);

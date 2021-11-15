@@ -1,15 +1,55 @@
+let username = document.getElementById("username");
+let usernameError = document.getElementById("usernameError");
 let password1 = document.getElementById("newpassword");
 let password2 = document.getElementById("newpassword2");
 let passwordError1 = document.getElementById("passwordError");
 let oldPass = document.getElementById("oldpassword");
 let error2 = document.getElementById("passwordError2");
 let check = false;
-var email = document.getElementById("email");
-var emailError = document.getElementById("emailError");
-var passBut = document.getElementById("passBut");
-var checkEmail = true;
-var emailCheck = /^[_\w\-]+(\.[_\w\-]+)*@[\w\-]+(\.[\w\-]+)*(\.[\D]{2,6})$/;
+let email = document.getElementById("email");
+let emailError = document.getElementById("emailError");
+let displayName = document.getElementById("name");
+let nameError = document.getElementById("nameError");
+let passBut = document.getElementById("passBut");
+let userErrorCk = true;
+let nameErrorCk = true;
+let emailErrorCk = true;
+let passErrorCk = true;
+let emailCheck = /^[_\w\-]+(\.[_\w\-]+)*@[\w\-]+(\.[\w\-]+)*(\.[\D]{2,6})$/;
 
+function validuser(){
+        if(username.value === "") {
+        usernameError.innerHTML = "Please fill in this field";
+        usernameError.style.display = "block";
+        username.style.background = "rgb(255,233,233)";
+        usernameError.style.position = "relative";
+        usernameError.style.left = "50%";
+        userErrorCk = false;
+    }
+    else{
+        username.style.background = "";
+        usernameError.style.display = "none";
+        usernameError.innerHTML = "";
+        userErrorCk = true;
+    }
+}
+
+function validName(){
+    if(displayName.value === "") {
+    nameError.innerHTML = "Please fill in this field";
+    nameError.style.display = "block";
+    displayName.style.background = "rgb(255,233,233)";
+    nameError.style.position = "relative";
+    nameError.style.left = "50%";
+    nameErrorCk = false;
+}
+else{
+    displayName.style.background = "";
+    nameError.style.display = "none";
+    nameError.innerHTML = "";
+    nameErrorCk = true;
+}
+}
 
 function validPassword(){
 
@@ -28,44 +68,35 @@ function validPassword(){
         password2.style.background = "";
         passwordError1.style.display = "none";
         passwordError1.innerHTML = "";
-        check = true;
+        passErrorCk = true;
         
     } catch (msg) {
         passwordError1.style.display = "block";
         passwordError1.innerHTML = msg;
         password1.style.background =  "rgb(255,233,233)";
         password2.style.background =  "rgb(255,233,233)";
-
-        
+        passwordError1.style.left = "50%";
+        passErrorCk = false; 
     }
 }
 
 function coverPass(){
     error2.style.display = "none";
 }
- 
-passBut = document.getElementById("passBut");
-passBut.addEventListener('click', (event) =>{
-    if(!check)
-    {
-        event.preventDefault();
-    }
-});
+
 function validEmail() {
     try {
 
         if (emailCheck.test(email.value) === false) {
             throw "Please enter a valid Email Address";
         }
-        email.style.background = "";
-        emailError.style.display = "none";
-        emailError.innerHTML = "";
+        
 
     } catch (msg) {
         emailError.style.display = "block";
         emailError.innerHTML = msg;
         email.style.background = "rgb(255,233,233)";
-        checkEmail = true;
+        emailErrorCk = false;
 
     }
     if (email.value === "") {
@@ -73,23 +104,41 @@ function validEmail() {
         emailError.style.display = "block";
         email.style.background = "rgb(255,233,233)";
         emailError.style.position = "relative";
-        emailError.style.left = "70px";
-        checkEmail = false;
+        emailError.style.left = "50%";
+        emailErrorCk = false;
+    }
+    else{
+        emailErrorCk = true;
+        email.style.background = "";
+        emailError.style.display = "none";
+        emailError.innerHTML = "";
     }
 }
 
 passBut.addEventListener('click', (event) =>{
-    if(!checkEmail)
+    if(!emailErrorCk || !nameErrorCk || !userErrorCk || !passErrorCk)
     {
         event.preventDefault();
     }
 });
+
 
 function createEventListeners() {
     if (email.addEventListener) {
         email.addEventListener("blur", validEmail, false);
     } else if (email.attachEvent) {
         email.attachEvent("onchange", validEmail);
+    }
+    if (username.addEventListener) {
+        username.addEventListener("blur", validuser, false);
+    }   else if (username.attachEvent) {
+        username.attachEvent("onchange", validuser);
+    }
+
+    if (displayName.addEventListener) {
+        displayName.addEventListener("blur", validName, false);
+    }   else if (displayName.attachEvent) {
+        displayName.attachEvent("onchange", validName);
     }
     if (password2.addEventListener) {
         password2.addEventListener("blur", validPassword, false);

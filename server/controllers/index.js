@@ -106,6 +106,10 @@ module.exports.processRegisterPage = (req, res, next) =>{
         if(err)
         {
             console.log("Error: Inserting New User");
+            req.flash(
+                'registerMessage',
+                'Registeration Error: User Already Exists'
+            );
             if(err.name == "UserExisitsError")
             {
                 req.flash(
@@ -168,7 +172,9 @@ module.exports.displayEditPage = (req, res, next) => {
             "_id" : id,
             username: req.body.username, 
             email: req.body.email,
-            displayName: req.body.displayName
+            displayName: req.body.name, 
+            created: req.user.created,
+            update: Date.now()
             
         });
     

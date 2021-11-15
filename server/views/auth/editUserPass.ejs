@@ -17,28 +17,35 @@
         <div class="form-group">
 
             <fieldset class="form-group">
-                <label for="oldpassword">Old Password: </label>
+                <label for="oldpassword"  style="left: 20%;">Old Password: </label>
                 <input type="password" class="form-control"
                 name="oldpassword" placeholder="Enter new password"
-                id="oldpassword">
+                id="oldpassword" <% if (typeof message=="string") { %> style="background-color: rgb(255,233,233);"
+                <% } else { %>
+                <% } %>
+                >
             </fieldset>
 
             <% if (typeof message=="string") { %>
             <div>
-                <h5 id="passwordError2" style="font-size: medium;"><%=message%></h5>
+                <h5 id="passwordError2" style="font-size: medium; left: 50%;"><%=message%></h5>
             </div>
             <% } else { %>
             <% } %>
+            <div>
+                <h5 id="passwordError3" style="font-size: medium;"></h5>
+            </div>
+            
 
             <fieldset class="form-group">
-                <label for="newpassword">New Password: </label>
+                <label for="newpassword"  style="left: 20%;">New Password: </label>
                 <input type="password" class="form-control"
                 name="newpassword" placeholder="Enter new password"
                 id="newpassword">
             </fieldset>
 
             <fieldset class="form-group">
-                <label for="newpassword2">Confirm Password:    </label>
+                <label for="newpassword2" style="left: 20%;">Confirm Password:    </label>
                 <input type="password" class="form-control"
                 name="newpassword2" placeholder="Confirm"
                 id="newpassword2">

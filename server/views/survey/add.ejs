@@ -1,56 +1,83 @@
-   <!--
+<!--
     File Name: add.ejs
     Group 2: 2BeOrNot2Be 
     -->
 
 <%- include ../Partials/header.ejs%>
-<%- include ../Partials/main_nav.ejs%>
+    <%- include ../Partials/main_nav.ejs%>
 
-<!-- Content for the Add Page-->
-<div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid jum">
-    <div class="row">
-        <div class="offset-md-3 col=md-6"></div>
-        <h1><%= title %></h1>
-    <form class="form"  method="POST">
-       <div class="form-group">
+        <!-- Content for the Add Page-->
+        <div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid jum">
+            <div class="row">
+                <div class="offset-md-3 col=md-6"></div>
+                <h1>
+                    <%= title %>
+                </h1>
+                <form class="form" method="POST">
+                    <div class="form-group">
+                        <fieldset style="border: black 1px solid; border-radius: 5px; height: 250px;">
+                            <br>
+                            <br>
 
-        <label for="nameTextField">Display Name</label>
-            <input type="text" class="form-control inputAreas"
-            id="nameTextField" placeholder="Enter the Survey's name" 
-            name="name"
-             required>
+                            <label for="nameTextField">Display Name</label>
+                            <input type="text" class="form-control inputAreas" id="nameTextField"
+                                placeholder="Enter the name of the survey" name="name" required tabindex="1">
+                            <br>
+                            <br>
+                            <p id="typeTitle">Select Survey Type: </p>
+                            <input id="saInput" type="radio" name="surveyType" value="Short Answer" tabindex="2"
+                                checked /><span id="sa">Short
+                                Answer</span>
+                            <br>
+                            <input id="mcInput" type="radio" name="surveyType" value="Multiple Choice"
+                                tabindex="3" /><span id="mc">Multiple
+                                Choice</span>
 
-                <label for="q1TextField">Question 1:</label>
-                <input type="text" class="form-control inputAreas"
-                id="q1TextField" placeholder="Enter Question 1" 
-                name="q1" 
-                required>
+                            <p id="numTitle">Select Number of Questions: </p>
+                            <select name="numOfQuestions" id="numOfQuestions" tabindex="4">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                            <p id="expireTitle">Select Number of Days Survey will be available for: </p>
+                            <select name="expiry" id="expiry" tabindex="5">
+                                <option value=86400>1</option>
+                                <option value=172800>2</option>
+                                <option value=259200>3</option>
+                                <option value=345600>4</option>
+                                <option value=432000>5</option>
+                                <option value=518400>6</option>
+                                <option value=604800>7</option>
+                                <option value=691200>8</option>
+                                <option value=777600>9</option>
+                                <option value=864000>10</option>
+                            </select>
+                        </fieldset>
+                        <br>
+                        <br>
+                        <br>
+                        <br id="questions">
+                        <div id="child" style="position: relative;">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
+                    <a href="/survey-list/add" class="btn btn-warning"><i class="fas fa-undo"></i> Restart</a>
+                    <a href="/survey-list" class="btn btn-warning"><i class="fas fa-ban"></i> Cancel</a>
+                    <br>
+                    <br>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label for="q2TextField">Question 2:</label>
-                <input type="text" class="form-control inputAreas"
-                id="q2TextField" placeholder="Enter Question 2" 
-                name="q2" 
-                required>
-            </div>
-
-            <div class="form-group">
-                <label for="q3TextField">Question 3:</label>
-                <input type="text" class="form-control inputAreas"
-                id="q3TextField" placeholder="Enter Question 3" 
-                name="q3" 
-                required>
-            </div>
-            
         </div>
 
-        <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
-        <a href="/survey-list" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</a>
-    </form>
-    </div>
-</div>
-
-<%- include ../Partials/bottom_nav.ejs%>  
-
-<%- include ../Partials/footer.ejs%>  
+        <%- include ../Partials/bottom_nav.ejs%>
+            <%- include ../Partials/footer.ejs%>
+                <script src="/Scripts/add.js"></script>
