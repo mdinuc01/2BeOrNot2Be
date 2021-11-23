@@ -15,6 +15,7 @@ let surveyModel = mongoose.Schema(
     expireAt: {type: String, expires: String,default: Date.now},
     name: String,
     type: String, 
+    ownedBy: String, 
     numQuestions: Number,
     q1: String,
     q2: String, 
@@ -71,7 +72,7 @@ let surveyModel = mongoose.Schema(
     q9A2: String,
     q9A3: String,
     q9A4: String,  
-    //question 310 options
+    //question 10 options
     q10A1: String,
     q10A2: String,
     q10A3: String,

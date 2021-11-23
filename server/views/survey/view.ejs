@@ -10,542 +10,588 @@
 <div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid jum">
     <div class="row">
         <div class="offset-md-3 col=md-6"></div>
-        <h1><%= title %></h1>
+        <h1><%= title %> - <%= survey.name%></h1>
         <br>
         <br>
         <form class="form"  method="POST">
+        <fieldset id="viewPage">
         <div class="form-group">
-        <h2><%= survey.name%></h2>
-       
+
     <% if(survey.type=='SA' && survey.numQuestions == 1) { %>
         <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-        <textarea class="form-control" id="q1A1"></textarea>
+        <textarea class="form-control" id="q1A1SAView"></textarea>
         <% } if(survey.type=='SA' && survey.numQuestions == 2) { %>
             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-            <textarea class="form-control" id="q1A1"></textarea>
+            <textarea class="form-control" id="q1A1SAView"></textarea>
             <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-            <textarea class="form-control" id="q1A2"></textarea>
+            <textarea class="form-control" id="q2A1SAView"></textarea>
             <% } if(survey.type=='SA' && survey.numQuestions ==3) { %>
                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                <textarea class="form-control" id="q1A1"></textarea>
+                <textarea class="form-control" id="q1A1SAView"></textarea>
                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                <textarea class="form-control" id="q2A1"></textarea>
+                <textarea class="form-control" id="q2A1SAView"></textarea>
                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                <textarea class="form-control" id="q3A1"></textarea>
+                <textarea class="form-control" id="q3A1SAView" ></textarea>
                 <% } if(survey.type=='SA' && survey.numQuestions ==4) { %>
                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                    <textarea class="form-control" id="q1A1"></textarea>
+                    <textarea class="form-control" id="q1A1SAView"></textarea>
                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                    <textarea class="form-control" id="q2A1"></textarea>
+                    <textarea class="form-control" id="q2A1SAView"></textarea>
                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                    <textarea class="form-control" id="q3A1"></textarea>
+                    <textarea class="form-control" id="q3A1SAView"></textarea>
                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                    <textarea class="form-control" id="q4A1"></textarea>
+                    <textarea class="form-control" id="q4A1SAView"></textarea>
                     <% } if(survey.type=='SA' && survey.numQuestions ==5) { %>
                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                        <textarea class="form-control" id="q1A1"></textarea>
+                        <textarea class="form-control" id="q1A1SAView"></textarea>
                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                        <textarea class="form-control" id="q2A1"></textarea>
+                        <textarea class="form-control" id="q2A1SAView"></textarea>
                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                        <textarea class="form-control" id="q3A1"></textarea>
+                        <textarea class="form-control" id="q3A1SAView"></textarea>
                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                        <textarea class="form-control" id="q4A1"></textarea>
+                        <textarea class="form-control" id="q4A1SAView"></textarea>
                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                        <textarea class="form-control" id="q5A1"></textarea>
+                        <textarea class="form-control" id="q5A1SAView"></textarea>
                         <% } if(survey.type=='SA' && survey.numQuestions ==6) { %>
                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                            <textarea class="form-control" id="q1A1"></textarea>
+                            <textarea class="form-control" id="q1A1SAView"></textarea>
                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                            <textarea class="form-control" id="q2A1"></textarea>
+                            <textarea class="form-control" id="q2A1SAView"></textarea>
                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                            <textarea class="form-control" id="q3A1"></textarea>
+                            <textarea class="form-control" id="q3A1SAView"></textarea>
                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                            <textarea class="form-control" id="q4A1"></textarea>
+                            <textarea class="form-control" id="q4A1SAView"></textarea>
                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                            <textarea class="form-control" id="q5A1"></textarea>
+                            <textarea class="form-control" id="q5A1SAView"></textarea>
                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                            <textarea class="form-control" id="q6A1"></textarea>
+                            <textarea class="form-control" id="q6A1SAView"></textarea>
                             <% } if(survey.type=='SA' && survey.numQuestions ==7) { %>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                <textarea class="form-control" id="q1A1"></textarea>
+                                <textarea class="form-control" id="q1A1SAView"></textarea>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                <textarea class="form-control" id="q2A1"></textarea>
+                                <textarea class="form-control" id="q2A1SAView"></textarea>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                <textarea class="form-control" id="q3A1"></textarea>
+                                <textarea class="form-control" id="q3A1SAView"></textarea>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                <textarea class="form-control" id="q4A1"></textarea>
+                                <textarea class="form-control" id="q4A1SAView"></textarea>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                <textarea class="form-control" id="q5A1"></textarea>
+                                <textarea class="form-control" id="q5A1SAView"></textarea>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                <textarea class="form-control" id="q6A1"></textarea>
+                                <textarea class="form-control" id="q6A1SAView"></textarea>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                <textarea class="form-control" id="q7A1"></textarea>
+                                <textarea class="form-control" id="q7A1SAView"></textarea>
                                 <% } if(survey.type=='SA' && survey.numQuestions ==8) { %>
                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                    <textarea class="form-control" id="q1A1"></textarea>
+                                    <textarea class="form-control" id="q1A1SAView"></textarea>
                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                    <textarea class="form-control" id="q2A1"></textarea>
+                                    <textarea class="form-control" id="q2A1SAView"></textarea>
                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                    <textarea class="form-control" id="q3A1"></textarea>
+                                    <textarea class="form-control" id="q3A1SAView"></textarea>
                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                    <textarea class="form-control" id="q4A1"></textarea>
+                                    <textarea class="form-control" id="q4A1SAView"></textarea>
                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                    <textarea class="form-control" id="q5A1"></textarea>
+                                    <textarea class="form-control" id="q5A1SAView"></textarea>
                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                    <textarea class="form-control" id="q6A1"></textarea>
+                                    <textarea class="form-control" id="q6A1SAView"></textarea>
                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                    <textarea class="form-control" id="q7A1"></textarea>
+                                    <textarea class="form-control" id="q7A1SAView"></textarea>
                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
-                                    <textarea class="form-control" id="q8A1"></textarea>
+                                    <textarea class="form-control" id="q8A1SAView"></textarea>
                                     <% } if(survey.type=='SA' && survey.numQuestions ==9) { %>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                        <textarea class="form-control" id="q1A1"></textarea>
+                                        <textarea class="form-control" id="q1A1SAView"></textarea>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                        <textarea class="form-control" id="q2A1"></textarea>
+                                        <textarea class="form-control" id="q2A1SAView"></textarea>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                        <textarea class="form-control" id="q3A1"></textarea>
+                                        <textarea class="form-control" id="q3A1SAView"></textarea>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                        <textarea class="form-control" id="q4A1"></textarea>
+                                        <textarea class="form-control" id="q4A1SAView"></textarea>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                        <textarea class="form-control" id="q5A1"></textarea>
+                                        <textarea class="form-control" id="q5A1SAView"></textarea>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                        <textarea class="form-control" id="q6A1"></textarea>
+                                        <textarea class="form-control" id="q6A1SAView"></textarea>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                        <textarea class="form-control" id="q7A1"></textarea>
+                                        <textarea class="form-control" id="q7A1SAView"></textarea>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
-                                        <textarea class="form-control" id="q8A1"></textarea>
+                                        <textarea class="form-control" id="q8A1SAView"></textarea>
                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q9"><%= survey.q9%></h4>
-                                        <textarea class="form-control" id="q9A1"></textarea>
+                                        <textarea class="form-control" id="q9A1SAView"></textarea>
                                         <% } if(survey.type=='SA' && survey.numQuestions ==10) { %>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                            <textarea class="form-control" id="q1A1"></textarea>
+                                            <textarea class="form-control" id="q1A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                            <textarea class="form-control" id="q2A1"></textarea>
+                                            <textarea class="form-control" id="q2A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                            <textarea class="form-control" id="q3A1"></textarea>
+                                            <textarea class="form-control" id="q3A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                            <textarea class="form-control" id="q4A1"></textarea>
+                                            <textarea class="form-control" id="q4A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                            <textarea class="form-control" id="q5A1"></textarea>
+                                            <textarea class="form-control" id="q5A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                            <textarea class="form-control" id="q6A1"></textarea>
+                                            <textarea class="form-control" id="q6A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                            <textarea class="form-control" id="q7A1"></textarea>
+                                            <textarea class="form-control" id="q7A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
-                                            <textarea class="form-control" id="q8A1"></textarea>
+                                            <textarea class="form-control" id="q8A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q9"><%= survey.q9%></h4>
-                                            <textarea class="form-control" id="q9A1"></textarea>
+                                            <textarea class="form-control" id="q9A1SAView"></textarea>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q10"><%= survey.q10%></h4>
-                                            <textarea class="form-control" id="q10A1"></textarea>
+                                            <textarea class="form-control" id="q10A1SAView"></textarea>
                                             <% } if(survey.type=='MA' && survey.numQuestions == 1) { %>
                                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                <ul id="question 1" style="display: list-item;">
-                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
+                                                <ul id="question1" >
+                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                     </ul>
                                                 <% } if(survey.type=='MA' && survey.numQuestions ==2) { %>
                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                    <ul id="question 1" style="display: list-item;">
-                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
-                                                    </ul>
-                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q2%></h4>
-                                                <ul id="question 2" style="display: list-item;">
-                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
-                                                    </ul>
+                                                        <ul id="question1" >
+                                                        <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                        <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                        <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                        <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
+                                                        </ul>
+                                                        <br>
+                                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
+                                                        <ul id="question2" >
+                                                        <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                        <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                        <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                        <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
+                                                        </ul>
                                                     <% } if(survey.type=='MA' && survey.numQuestions ==3) { %>
                                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                    <ul id="question 1" style="display: list-item;">
-                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
-                                                    </ul>
-                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                                    <ul id="question 2" style="display: list-item;">
-                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
-                                                    </ul>
-                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                                    <ul id="question 3" style="display: list-item;">
-                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA"><label id="viewLabels"><%=survey.q3A1%></label></li>
-                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA"><label id="viewLabels"><%=survey.q3A2%></label></li>
-                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA"><label id="viewLabels"><%=survey.q3A3%></label></li>
-                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA"><label id="viewLabels"><%=survey.q3A4%></label></li>
-                                                    </ul>
+                                                        <ul id="question1" >
+                                                        <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                        <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                        <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                        <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
+                                                        </ul>
+                                                        <br>
+                                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
+                                                        <ul id="question2" >
+                                                        <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                        <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                        <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                        <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
+                                                        </ul>
+                                                        <br>
+                                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
+                                                        <ul id="question" >
+                                                        <li><input type="radio" name=q3 value="q3A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A1%></p></li>
+                                                        <li><input type="radio" name=q3 value="q3A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A2%></p></li>
+                                                        <li><input type="radio" name=q3 value="q3A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A3%></p></li>
+                                                        <li><input type="radio" name=q3 value="q3A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A4%></p></li>
+                                                        </ul>
                                                     
                                                         <% } if(survey.type=='MA' && survey.numQuestions ==4) { %>
-                                                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                                                    <ul id="question 1" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
+                                                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                                                                    <ul id="question1" >
+                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                                                                    <ul id="question 2" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
+                                                                                    <ul id="question2" >
+                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                                                                    <ul id="question 3" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA"><label id="viewLabels"><%=survey.q3A1%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA"><label id="viewLabels"><%=survey.q3A2%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA"><label id="viewLabels"><%=survey.q3A3%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA"><label id="viewLabels"><%=survey.q3A4%></label></li>
+                                                                                    <ul id="question3" >
+                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A1%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A2%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A3%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                                                                    <ul id="question 4" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA"><label id="viewLabels"><%=survey.q4A1%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA"><label id="viewLabels"><%=survey.q4A2%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA"><label id="viewLabels"><%=survey.q4A3%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA"><label id="viewLabels"><%=survey.q4A4%></label></li>
+                                                                                    <ul id="question4" >
+                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A1%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A2%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A3%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A4%></p></li>
                                                                                     </ul>
                                                             <% } if(survey.type=='MA' && survey.numQuestions ==5) { %>
-                                                                <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                                                    <ul id="question 1" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
+                                                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                                                                    <ul id="question1" >
+                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                                                                    <ul id="question 2" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
+                                                                                    <ul id="question2" >
+                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                                                                    <ul id="question 3" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA"><label id="viewLabels"><%=survey.q3A1%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA"><label id="viewLabels"><%=survey.q3A2%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA"><label id="viewLabels"><%=survey.q3A3%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA"><label id="viewLabels"><%=survey.q3A4%></label></li>
+                                                                                    <ul id="question3" >
+                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A1%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A2%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A3%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                                                                    <ul id="question 4" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA"><label id="viewLabels"><%=survey.q4A1%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA"><label id="viewLabels"><%=survey.q4A2%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA"><label id="viewLabels"><%=survey.q4A3%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA"><label id="viewLabels"><%=survey.q4A4%></label></li>
+                                                                                    <ul id="question4" >
+                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A1%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A2%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A3%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                                                                    <ul id="question 5" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA"><label id="viewLabels"><%=survey.q5A1%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA"><label id="viewLabels"><%=survey.q5A2%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA"><label id="viewLabels"><%=survey.q5A3%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA"><label id="viewLabels"><%=survey.q5A4%></label></li>
+                                                                                    <ul id="question5" >
+                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A1%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A2%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A3%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A4%></p></li>
                                                                                     </ul>
                                                                 <% } if(survey.type=='MA' && survey.numQuestions ==6) { %>
-                                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                                                    <ul id="question 1" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
+                                                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                                                                    <ul id="question1" >
+                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                                                                    <ul id="question 2" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
+                                                                                    <ul id="question2" >
+                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                                                                    <ul id="question 3" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA"><label id="viewLabels"><%=survey.q3A1%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA"><label id="viewLabels"><%=survey.q3A2%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA"><label id="viewLabels"><%=survey.q3A3%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA"><label id="viewLabels"><%=survey.q3A4%></label></li>
+                                                                                    <ul id="question3" >
+                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A1%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A2%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A3%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                                                                    <ul id="question 4" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA"><label id="viewLabels"><%=survey.q4A1%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA"><label id="viewLabels"><%=survey.q4A2%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA"><label id="viewLabels"><%=survey.q4A3%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA"><label id="viewLabels"><%=survey.q4A4%></label></li>
+                                                                                    <ul id="question4" >
+                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A1%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A2%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A3%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                                                                    <ul id="question 5" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA"><label id="viewLabels"><%=survey.q5A1%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA"><label id="viewLabels"><%=survey.q5A2%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA"><label id="viewLabels"><%=survey.q5A3%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA"><label id="viewLabels"><%=survey.q5A4%></label></li>
+                                                                                    <ul id="question5" >
+                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A1%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A2%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A3%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                                                                    <ul id="question 6" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA"><label id="viewLabels"><%=survey.q6A1%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA"><label id="viewLabels"><%=survey.q6A2%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA"><label id="viewLabels"><%=survey.q6A3%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA"><label id="viewLabels"><%=survey.q6A4%></label></li>
+                                                                                    <ul id="question6" >
+                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A1%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A2%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A3%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A4%></p></li>
                                                                                     </ul>
                                                                     <% } if(survey.type=='MA' && survey.numQuestions ==7) { %>
-                                                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                                                    <ul id="question 1" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
+                                                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                                                                    <ul id="question1" >
+                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                                                                    <ul id="question 2" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
+                                                                                    <ul id="question2" >
+                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                                                                    <ul id="question 3" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA"><label id="viewLabels"><%=survey.q3A1%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA"><label id="viewLabels"><%=survey.q3A2%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA"><label id="viewLabels"><%=survey.q3A3%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA"><label id="viewLabels"><%=survey.q3A4%></label></li>
+                                                                                    <ul id="question3" >
+                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A1%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A2%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A3%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                                                                    <ul id="question 4" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA"><label id="viewLabels"><%=survey.q4A1%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA"><label id="viewLabels"><%=survey.q4A2%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA"><label id="viewLabels"><%=survey.q4A3%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA"><label id="viewLabels"><%=survey.q4A4%></label></li>
+                                                                                    <ul id="question4" >
+                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A1%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A2%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A3%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                                                                    <ul id="question 5" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA"><label id="viewLabels"><%=survey.q5A1%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA"><label id="viewLabels"><%=survey.q5A2%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA"><label id="viewLabels"><%=survey.q5A3%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA"><label id="viewLabels"><%=survey.q5A4%></label></li>
+                                                                                    <ul id="question5" >
+                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A1%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A2%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A3%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                                                                    <ul id="question 6" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA"><label id="viewLabels"><%=survey.q6A1%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA"><label id="viewLabels"><%=survey.q6A2%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA"><label id="viewLabels"><%=survey.q6A3%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA"><label id="viewLabels"><%=survey.q6A4%></label></li>
+                                                                                    <ul id="question6" >
+                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A1%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A2%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A3%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                                                                    <ul id="question 7" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q7 value="q7A1" class="viewA"><label id="viewLabels"><%=survey.q7A1%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A2" class="viewA"><label id="viewLabels"><%=survey.q7A2%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A3" class="viewA"><label id="viewLabels"><%=survey.q7A3%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A4" class="viewA"><label id="viewLabels"><%=survey.q7A4%></label></li>
+                                                                                    <ul id="question7" >
+                                                                                    <li><input type="radio" name=q7 value="q7A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A1%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A2%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A3%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A4%></p></li>
                                                                                     </ul>
                                                                         <% } if(survey.type=='MA' && survey.numQuestions ==8) { %>
-                                                                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                                                    <ul id="question 1" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
+                                                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                                                                    <ul id="question1" >
+                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                                                                    <ul id="question 2" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
+                                                                                    <ul id="question2" >
+                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                                                                    <ul id="question 3" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA"><label id="viewLabels"><%=survey.q3A1%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA"><label id="viewLabels"><%=survey.q3A2%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA"><label id="viewLabels"><%=survey.q3A3%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA"><label id="viewLabels"><%=survey.q3A4%></label></li>
+                                                                                    <ul id="question3" >
+                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A1%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A2%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A3%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                                                                    <ul id="question 4" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA"><label id="viewLabels"><%=survey.q4A1%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA"><label id="viewLabels"><%=survey.q4A2%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA"><label id="viewLabels"><%=survey.q4A3%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA"><label id="viewLabels"><%=survey.q4A4%></label></li>
+                                                                                    <ul id="question4" >
+                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A1%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A2%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A3%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                                                                    <ul id="question 5" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA"><label id="viewLabels"><%=survey.q5A1%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA"><label id="viewLabels"><%=survey.q5A2%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA"><label id="viewLabels"><%=survey.q5A3%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA"><label id="viewLabels"><%=survey.q5A4%></label></li>
+                                                                                    <ul id="question5" >
+                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A1%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A2%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A3%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                                                                    <ul id="question 6" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA"><label id="viewLabels"><%=survey.q6A1%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA"><label id="viewLabels"><%=survey.q6A2%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA"><label id="viewLabels"><%=survey.q6A3%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA"><label id="viewLabels"><%=survey.q6A4%></label></li>
+                                                                                    <ul id="question6" >
+                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A1%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A2%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A3%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                                                                    <ul id="question 7" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q7 value="q7A1" class="viewA"><label id="viewLabels"><%=survey.q7A1%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A2" class="viewA"><label id="viewLabels"><%=survey.q7A2%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A3" class="viewA"><label id="viewLabels"><%=survey.q7A3%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A4" class="viewA"><label id="viewLabels"><%=survey.q7A4%></label></li>
+                                                                                    <ul id="question7" >
+                                                                                    <li><input type="radio" name=q7 value="q7A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A1%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A2%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A3%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
-                                                                                    <ul id="question 8" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q8 value="q8A1" class="viewA"><label id="viewLabels"><%=survey.q8A1%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A2" class="viewA"><label id="viewLabels"><%=survey.q8A2%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A3" class="viewA"><label id="viewLabels"><%=survey.q8A3%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A4" class="viewA"><label id="viewLabels"><%=survey.q8A4%></label></li>
+                                                                                    <ul id="question8" >
+                                                                                    <li><input type="radio" name=q8 value="q8A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A1%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A2%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A3%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A4%></p></li>
                                                                                     </ul>
                                                                             <% } if(survey.type=='MA' && survey.numQuestions ==9) { %>
-                                                                                <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                                                    <ul id="question 1" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
+                                                                                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                                                                    <ul id="question1" >
+                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                                                                    <ul id="question 2" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
+                                                                                    <ul id="question2" >
+                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                                                                    <ul id="question 3" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA"><label id="viewLabels"><%=survey.q3A1%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA"><label id="viewLabels"><%=survey.q3A2%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA"><label id="viewLabels"><%=survey.q3A3%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA"><label id="viewLabels"><%=survey.q3A4%></label></li>
+                                                                                    <ul id="question3" >
+                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A1%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A2%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A3%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                                                                    <ul id="question 4" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA"><label id="viewLabels"><%=survey.q4A1%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA"><label id="viewLabels"><%=survey.q4A2%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA"><label id="viewLabels"><%=survey.q4A3%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA"><label id="viewLabels"><%=survey.q4A4%></label></li>
+                                                                                    <ul id="question4" >
+                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A1%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A2%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A3%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                                                                    <ul id="question 5" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA"><label id="viewLabels"><%=survey.q5A1%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA"><label id="viewLabels"><%=survey.q5A2%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA"><label id="viewLabels"><%=survey.q5A3%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA"><label id="viewLabels"><%=survey.q5A4%></label></li>
+                                                                                    <ul id="question5" >
+                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A1%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A2%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A3%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                                                                    <ul id="question 6" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA"><label id="viewLabels"><%=survey.q6A1%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA"><label id="viewLabels"><%=survey.q6A2%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA"><label id="viewLabels"><%=survey.q6A3%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA"><label id="viewLabels"><%=survey.q6A4%></label></li>
+                                                                                    <ul id="question6" >
+                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A1%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A2%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A3%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                                                                    <ul id="question 7" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q7 value="q7A1" class="viewA"><label id="viewLabels"><%=survey.q7A1%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A2" class="viewA"><label id="viewLabels"><%=survey.q7A2%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A3" class="viewA"><label id="viewLabels"><%=survey.q7A3%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A4" class="viewA"><label id="viewLabels"><%=survey.q7A4%></label></li>
+                                                                                    <ul id="question7" >
+                                                                                    <li><input type="radio" name=q7 value="q7A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A1%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A2%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A3%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
-                                                                                    <ul id="question 8" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q8 value="q8A1" class="viewA"><label id="viewLabels"><%=survey.q8A1%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A2" class="viewA"><label id="viewLabels"><%=survey.q8A2%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A3" class="viewA"><label id="viewLabels"><%=survey.q8A3%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A4" class="viewA"><label id="viewLabels"><%=survey.q8A4%></label></li>
+                                                                                    <ul id="question8" >
+                                                                                    <li><input type="radio" name=q8 value="q8A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A1%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A2%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A3%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q9"><%= survey.q9%></h4>
-                                                                                    <ul id="question 9" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q9 value="q9A1" class="viewA"><label id="viewLabels"><%=survey.q9A1%></label></li>
-                                                                                    <li><input type="radio" name=q9 value="q9A2" class="viewA"><label id="viewLabels"><%=survey.q9A2%></label></li>
-                                                                                    <li><input type="radio" name=q9 value="q9A3" class="viewA"><label id="viewLabels"><%=survey.q9A3%></label></li>
-                                                                                    <li><input type="radio" name=q9 value="q9A4" class="viewA"><label id="viewLabels"><%=survey.q9A4%></label></li>
+                                                                                    <ul id="question9" >
+                                                                                    <li><input type="radio" name=q9 value="q9A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A1%></p></li>
+                                                                                    <li><input type="radio" name=q9 value="q9A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A2%></p></li>
+                                                                                    <li><input type="radio" name=q9 value="q9A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A3%></p></li>
+                                                                                    <li><input type="radio" name=q9 value="q9A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A4%></p></li>
                                                                                     </ul>
                                                                                 <% } if(survey.type=='MA' && survey.numQuestions ==10) { %>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                                                                    <ul id="question 1" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA"><label id="viewLabels"><%=survey.q1A1%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA"><label id="viewLabels"><%=survey.q1A2%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA"><label id="viewLabels"><%=survey.q1A3%></label></li>
-                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA"><label id="viewLabels"><%=survey.q1A4%></label></li>
+                                                                                    <ul id="question1" >
+                                                                                    <li><input type="radio" name=q1 value="q1A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A2%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A3%></p></li>
+                                                                                    <li><input type="radio" name=q1 value="q1A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                                                                    <ul id="question 2" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA"><label id="viewLabels"><%=survey.q2A1%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA"><label id="viewLabels"><%=survey.q2A2%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA"><label id="viewLabels"><%=survey.q2A3%></label></li>
-                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA"><label id="viewLabels"><%=survey.q2A4%></label></li>
+                                                                                    <ul id="question2" >
+                                                                                    <li><input type="radio" name=q2 value="q2A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A1%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A2%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A3%></p></li>
+                                                                                    <li><input type="radio" name=q2 value="q2A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                                                                    <ul id="question 3" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA"><label id="viewLabels"><%=survey.q3A1%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA"><label id="viewLabels"><%=survey.q3A2%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA"><label id="viewLabels"><%=survey.q3A3%></label></li>
-                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA"><label id="viewLabels"><%=survey.q3A4%></label></li>
+                                                                                    <ul id="question3" >
+                                                                                    <li><input type="radio" name=q3 value="q3A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A1%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A2%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A3%></p></li>
+                                                                                    <li><input type="radio" name=q3 value="q3A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q3A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                                                                    <ul id="question 4" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA"><label id="viewLabels"><%=survey.q4A1%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA"><label id="viewLabels"><%=survey.q4A2%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA"><label id="viewLabels"><%=survey.q4A3%></label></li>
-                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA"><label id="viewLabels"><%=survey.q4A4%></label></li>
+                                                                                    <ul id="question4" >
+                                                                                    <li><input type="radio" name=q4 value="q4A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A1%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A2%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A3%></p></li>
+                                                                                    <li><input type="radio" name=q4 value="q4A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                                                                    <ul id="question 5" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA"><label id="viewLabels"><%=survey.q5A1%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA"><label id="viewLabels"><%=survey.q5A2%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA"><label id="viewLabels"><%=survey.q5A3%></label></li>
-                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA"><label id="viewLabels"><%=survey.q5A4%></label></li>
+                                                                                    <ul id="question5" >
+                                                                                    <li><input type="radio" name=q5 value="q5A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A1%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A2%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A3%></p></li>
+                                                                                    <li><input type="radio" name=q5 value="q5A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                                                                    <ul id="question 6" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA"><label id="viewLabels"><%=survey.q6A1%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA"><label id="viewLabels"><%=survey.q6A2%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA"><label id="viewLabels"><%=survey.q6A3%></label></li>
-                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA"><label id="viewLabels"><%=survey.q6A4%></label></li>
+                                                                                    <ul id="question6" >
+                                                                                    <li><input type="radio" name=q6 value="q6A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A1%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A2%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A3%></p></li>
+                                                                                    <li><input type="radio" name=q6 value="q6A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                                                                    <ul id="question 7" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q7 value="q7A1" class="viewA"><label id="viewLabels"><%=survey.q7A1%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A2" class="viewA"><label id="viewLabels"><%=survey.q7A2%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A3" class="viewA"><label id="viewLabels"><%=survey.q7A3%></label></li>
-                                                                                    <li><input type="radio" name=q7 value="q7A4" class="viewA"><label id="viewLabels"><%=survey.q7A4%></label></li>
+                                                                                    <ul id="question7" >
+                                                                                    <li><input type="radio" name=q7 value="q7A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A1%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A2%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A3%></p></li>
+                                                                                    <li><input type="radio" name=q7 value="q7A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
-                                                                                    <ul id="question 8" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q8 value="q8A1" class="viewA"><label id="viewLabels"><%=survey.q8A1%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A2" class="viewA"><label id="viewLabels"><%=survey.q8A2%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A3" class="viewA"><label id="viewLabels"><%=survey.q8A3%></label></li>
-                                                                                    <li><input type="radio" name=q8 value="q8A4" class="viewA"><label id="viewLabels"><%=survey.q8A4%></label></li>
+                                                                                    <ul id="question8" >
+                                                                                    <li><input type="radio" name=q8 value="q8A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A1%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A2%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A3%></p></li>
+                                                                                    <li><input type="radio" name=q8 value="q8A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q9"><%= survey.q9%></h4>
-                                                                                    <ul id="question 9" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q9 value="q9A1" class="viewA"><label id="viewLabels"><%=survey.q9A1%></label></li>
-                                                                                    <li><input type="radio" name=q9 value="q9A2" class="viewA"><label id="viewLabels"><%=survey.q9A2%></label></li>
-                                                                                    <li><input type="radio" name=q9 value="q9A3" class="viewA"><label id="viewLabels"><%=survey.q9A3%></label></li>
-                                                                                    <li><input type="radio" name=q9 value="q9A4" class="viewA"><label id="viewLabels"><%=survey.q9A4%></label></li>
+                                                                                    <ul id="question9" >
+                                                                                    <li><input type="radio" name=q9 value="q9A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A1%></p></li>
+                                                                                    <li><input type="radio" name=q9 value="q9A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A2%></p></li>
+                                                                                    <li><input type="radio" name=q9 value="q9A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A3%></p></li>
+                                                                                    <li><input type="radio" name=q9 value="q9A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A4%></p></li>
                                                                                     </ul>
+                                                                                    <br>
+                                                                                    <fieldset id="fieldset"></fieldset>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q10"><%= survey.q10%></h4>
-                                                                                    <ul id="question 10" style="display: list-item;">
-                                                                                    <li><input type="radio" name=q10 value="q10A1" class="viewA"><label id="viewLabels"><%=survey.q10A1%></label></li>
-                                                                                    <li><input type="radio" name=q10 value="q10A2" class="viewA"><label id="viewLabels"><%=survey.q10A2%></label></li>
-                                                                                    <li><input type="radio" name=q10 value="q10A3" class="viewA"><label id="viewLabels"><%=survey.q10A3%></label></li>
-                                                                                    <li><input type="radio" name=q10 value="q10A4" class="viewA"><label id="viewLabels"><%=survey.q10A4%></label></li>
+                                                                                    <ul id="question10" >
+                                                                                    <li><input type="radio" name=q10 value="q10A1" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q10A1%></p></li>
+                                                                                    <li><input type="radio" name=q10 value="q10A2" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q10A2%></p></li>
+                                                                                    <li><input type="radio" name=q10 value="q10A3" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q10A3%></p></li>
+                                                                                    <li><input type="radio" name=q10 value="q10A4" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q10A4%></p></li>
                                                                                     </ul> 
                                                                                     <% } %>
-   
-
-
-  
-        </div>
+                                                                            </div>
         <br>
         <br>
         <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
         <a href="/survey-list" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</a>
     </div>
 </div>
+<br>
+    <br>
+</fieldset>
     </form>
+    
     
 
 <%- include ../Partials/bottom_nav.ejs%>  

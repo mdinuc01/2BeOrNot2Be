@@ -12,21 +12,27 @@
                 <h1>
                     <%= title %>
                 </h1>
-                <br>
-                <br>
+                
+                <% if(typeof displayName=='string' && displayName) { %>
+                    <br>
+                    <br>
+                <h2>Your Surveys</h2>
+                
                 <table class="table table-bordered table-striped table-hover col-md-6">
                     <!-- Header Row-->
                     <tr>
                         <th class="text-center" scope="col-1">Name</th>
                         <th class="text-center" scope="col-1">Survey Link</th>
                         <% if(typeof displayName=='string' && displayName) { %>
-                            <th class="text-center" scope="col-1"></th>
-                            <th class="text-center" scope="col-1"></th>
+                            <th class="text-center" scope="col-1">Update</th>
+                            <th class="text-center" scope="col-1">Delete</th>
                             <% } %>
                     </tr>
 
+                    
                     <!-- Repeatable Template Row-->
                     <% for(let count=0; count < surveyList.length; count++) { %>
+                        <% if(surveyList[count].ownedBy == displayName) { %>
                         <tr>
                             <td class="class text-center col-1">
                                 <%= surveyList[count].name %>
@@ -50,16 +56,53 @@
                                                 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
                                                 Delete</span></i></a>
                                 </td>
+                                    <% } %>
                                 <% } %>
                         </tr>
 
                         <% } %>
                 </table>
+                <% } %>
+
                 <% if(typeof displayName=='string' && displayName) { %>
+                    <br>
+                    <br>
                     <a href="/survey-list/add" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
                         class="btn btn-primary" role="button" id="addsurvey"><i class="fas fa fa-plus-circle"></i>
                         <b>Add a Survery</b></a>
+                        <br>
+                        <br>
                     <% } %>
+                
+                <% if(typeof displayName=='string' && displayName) { %>
+                    <br>
+                    <h2>All Surveys</h2>
+                    <% } %>
+                <table class="table table-bordered table-striped table-hover col-md-6">
+                    <!-- Header Row-->
+                    <tr>
+                        <th class="text-center" scope="col-3">Name</th>
+                        <th class="text-center" scope="col-3">Survey Link</th>
+                        
+                    </tr>
+
+                    <!-- Repeatable Template Row-->
+                    <% for(let count=0; count < surveyList.length; count++) { %>
+                        <tr>
+                            <td class="class text-center col-1">
+                                <%= surveyList[count].name %>
+                            </td>
+                            <td class="class text-center col-1">
+                                    <a href="/survey-list/view/<%= surveyList[count].id %>"
+                                        style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
+                                        class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
+                                        <b>View Survey</b></a>
+                        </tr>
+
+                        <% } %>
+                </table>
+               <br>
+               <br>
             </div>
 
             </div>

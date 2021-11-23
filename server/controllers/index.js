@@ -82,14 +82,14 @@ module.exports.processLoginPage = (req, res, next) => {
             const authToken = jwt.sign(payload, DB.Secret,{
                 expiresIn: 604800 // 1 week
             });
-            /* TODO  Getting ready to convert to API
-            res.json({sucess: true, msg: 'User Logged in Successfully!', user: {
-                id: user._id,
-                displayName: user.displayName,
-                username: user.username,
-                email: user.email
-            }, token: authToken});
-            */
+            
+            // res.json({sucess: true, msg: 'User Logged in Successfully!', user: {
+            //     id: user._id,
+            //     displayName: user.displayName,
+            //     username: user.username,
+            //     email: user.email
+            // }, token: authToken});
+            
 
             return res.render('survey/list',
             {title: 'Surveys', 
@@ -127,7 +127,7 @@ module.exports.processRegisterPage = (req, res, next) =>{
         displayName: req.body.displayName
     });
 
-    User.register(newUser, req.body.password, (err) => {
+    User.register(newUser, req.body.newpassword2, (err) => {
         if(err)
         {
             console.log("Error: Inserting New User");
@@ -158,14 +158,11 @@ module.exports.processRegisterPage = (req, res, next) =>{
             // if no error exists, then registration is successful
 
             //redirect the user and authenticate them
+            
 
-             /* TODO -  Getting ready to convert to API
-            res.json({success: true, msg: 'User Registered Successfully!' });
-             */
-
-
-            return passport.authenticate('local')(req, res, () => {
-                res.redirect('/survey-list')
+            passport.authenticate('local')(req, res, () => {
+                res.redirect('/');
+                
             });
         }
     });
