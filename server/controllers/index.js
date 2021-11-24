@@ -124,18 +124,15 @@ module.exports.processRegisterPage = (req, res, next) =>{
     let newUser = new User({
         username: req.body.username, 
         email: req.body.email,
-        displayName: req.body.displayName
+        displayName: req.body.name
     });
+
 
     User.register(newUser, req.body.newpassword2, (err) => {
         if(err)
         {
-            console.log("Error: Inserting New User");
-            req.flash(
-                'registerMessage',
-                'Registeration Error: User Already Exists'
-            );
-            if(err.name == "UserExisitsError")
+            console.log('Error: Inserting New User');
+            if(err.name == 'UserExisitsError')
             {
                 req.flash(
                     'registerMessage',
@@ -143,29 +140,42 @@ module.exports.processRegisterPage = (req, res, next) =>{
                 );
                 console.log('Error: User Already Exists!')
             }
-            else{
-                
+            
             return res.render('auth/register', 
             {
                 title: 'Register',
                 messages: req.flash('registerMessage'),
                 displayName: req.user ? req.user.displayName : ''
             });
+                        
         }
-        }
+
         else
         {
+            res.redirect('/login');
+
             // if no error exists, then registration is successful
 
             //redirect the user and authenticate them
-            
+            // const payload = 
+            // {
+            //     id: user._id,
+            //     displayName: user.displayName,
+            //     username: user.username,
+            //     email: user.email
+            // }
 
-            passport.authenticate('local')(req, res, () => {
-                res.redirect('/');
-                
-            });
+            // const authToken = jwt.sign(payload, DB.Secret,{
+            //     expiresIn: 604800 // 1 week
+            // });
+
+            // passport.authenticate('local')(req, res, () => {
+            //     res.redirect('/survey-list');
+            // });
+                    
         }
     });
+
 }
 
 module.exports.performLogout = (req, res, next) =>{
