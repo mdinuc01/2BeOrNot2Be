@@ -367,3 +367,10 @@
       width: 60%;
     }
     
+    #cancel-btn {
+      margin: 5px;
+     position: relative;
+     left: 50%;
+     bottom: 24px;
+
+   }
