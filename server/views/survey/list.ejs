@@ -88,6 +88,7 @@
 
                     <!-- Repeatable Template Row-->
                     <% for(let count=0; count < surveyList.length; count++) { %>
+                        <% if(surveyList[count].ownedBy != displayName) { %>
                         <tr>
                             <td class="class text-center col-1">
                                 <%= surveyList[count].name %>
@@ -100,7 +101,9 @@
                         </tr>
 
                         <% } %>
+                        <% } %>
                 </table>
+                
                <br>
                <br>
             </div>
