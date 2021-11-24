@@ -152,7 +152,7 @@ module.exports.processRegisterPage = (req, res, next) =>{
 
         else
         {
-            res.redirect('/login');
+            res.redirect('/reg_success');
 
             // if no error exists, then registration is successful
 
@@ -176,6 +176,23 @@ module.exports.processRegisterPage = (req, res, next) =>{
         }
     });
 
+}
+
+module.exports.displayRegSuccessPage = (req, res, next) => {
+    if (!req.user)
+    {
+        res.render('auth/reg_log',
+        {
+            title: 'Login',
+            messages: req.flash('loginMessage'),
+            displayName: req.user ? req.userdisplayName: ''
+        })
+    }
+    else
+    {
+         
+        return res.redirect('/');
+    }
 }
 
 module.exports.performLogout = (req, res, next) =>{

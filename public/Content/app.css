@@ -374,3 +374,47 @@
      bottom: 24px;
 
    }
+
+   #messageBox{
+    position: relative;
+    width: 400px;
+    left: 35%;
+    bottom: 300px;
+    z-index: 5;
+    display: block;
+    background-color: green; 
+    opacity: 0.9;
+    text-align: center; 
+    padding: 10px;
+    color: white; 
+    border-radius: 10px;
+    border: 1px black solid;
+  }
+
+  #ok{
+    border-radius: 5px;
+  }
+
+  .overlay {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:white;
+    opacity:0.8;
+    z-index:1001;
+}
+.overlay-message{
+    position: fixed;
+    top:180px;
+    left:550px;
+    width:400px;
+    height:250px;
+    color: white;
+    background-color:rgb(128, 163, 128);
+    opacity:1;
+    z-index:1002;
+    text-align: center;
+    border-radius: 5px;
+}

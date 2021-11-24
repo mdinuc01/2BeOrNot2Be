@@ -32,7 +32,7 @@
                     
                     <!-- Repeatable Template Row-->
                     <% for(let count=0; count < surveyList.length; count++) { %>
-                        <% if(surveyList[count].ownedBy == displayName) { %>
+                        <% if(surveyList[count].ownedBy == id) { %>
                         <tr>
                             <td class="class text-center col-1">
                                 <%= surveyList[count].name %>
@@ -88,7 +88,8 @@
 
                     <!-- Repeatable Template Row-->
                     <% for(let count=0; count < surveyList.length; count++) { %>
-                        <% if(surveyList[count].ownedBy != displayName) { %>
+                        <% if(typeof displayName=='string' && displayName) { %>
+                        <% if(surveyList[count].ownedBy != id) { %>
                         <tr>
                             <td class="class text-center col-1">
                                 <%= surveyList[count].name %>
@@ -100,6 +101,21 @@
                                         <b>View Survey</b></a>
                         </tr>
 
+                        <% } %>
+                        <% } %>
+                        <% } %>
+                        <% if(!displayName) { %>
+                          <% for(let count=0; count < surveyList.length; count++) { %>
+                        <tr>
+                            <td class="class text-center col-1">
+                                <%= surveyList[count].name %>
+                            </td>
+                            <td class="class text-center col-1">
+                                    <a href="/survey-list/view/<%= surveyList[count].id %>"
+                                        style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
+                                        class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
+                                        <b>View Survey</b></a>
+                        </tr>
                         <% } %>
                         <% } %>
                 </table>
