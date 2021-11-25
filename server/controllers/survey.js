@@ -118,8 +118,8 @@ module.exports.processAddPage = (req, res, next) => {
         "q10A4": req.body.q10A4,
         "numQuestions": req.params.num, 
         "type": req.params.type,
-        "createAt": Date.now(),
-        "expireAt":  req.params.expires
+        "createdAt": Date.now(),
+        "expiresIn": req.params.expires
     });
 
     Survey.create(newSurvey, (err, Survey) => {

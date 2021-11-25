@@ -152,27 +152,7 @@ module.exports.processRegisterPage = (req, res, next) =>{
 
         else
         {
-            res.redirect('/reg_success');
-
-            // if no error exists, then registration is successful
-
-            //redirect the user and authenticate them
-            // const payload = 
-            // {
-            //     id: user._id,
-            //     displayName: user.displayName,
-            //     username: user.username,
-            //     email: user.email
-            // }
-
-            // const authToken = jwt.sign(payload, DB.Secret,{
-            //     expiresIn: 604800 // 1 week
-            // });
-
-            // passport.authenticate('local')(req, res, () => {
-            //     res.redirect('/survey-list');
-            // });
-                    
+            res.redirect('/reg_success');                    
         }
     });
 

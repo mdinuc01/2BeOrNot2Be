@@ -11,8 +11,8 @@ let mongoose = require('mongoose');
 let surveyModel = mongoose.Schema(
   
   {
-    createdAt: { type: Date, default: Date.now },
-    expireAt: {type: String, expires: String,default: Date.now},
+    createdAt: Date,
+    expiresIn: String,
     name: String,
     type: String, 
     ownedBy: String, 
