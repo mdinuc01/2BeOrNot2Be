@@ -12,10 +12,26 @@
                 <h1>
                     <%= title %>
                 </h1>
-                
                 <% if(typeof displayName=='string' && displayName) { %>
+                <%let counter =0%>
+                <% for(let count=0; count < surveyList.length; count++) { %>
+                <% if(surveyList[count].ownedBy == id) { %>
+             <%counter++ %>
+             <% } %>
+             <% } %>
+
+                
                     <br>
                     <br>
+                    <% if(counter < 1) { %>
+                        <div style="background-color: rgb(165, 164, 164); height: 200px; border-radius: 5px;">
+                           <br> 
+                           <br>
+                        <h2 style="text-align: center;">You don't have any suverys yet!</h2>
+                        <h3 style="text-align: center;">Click "Add a survey" to get started</h3>
+                        </div>
+
+                <% } else { %>
                 <h2>Your Surveys</h2>
                 
                 <table class="table table-bordered table-striped table-hover col-md-6">
@@ -25,7 +41,10 @@
                         <th class="text-center" scope="col-1">Survey Link</th>
                         <% if(typeof displayName=='string' && displayName) { %>
                             <th class="text-center" scope="col-1">Update</th>
+                            <th class="text-center" scope="col-1">Results</th>
                             <th class="text-center" scope="col-1">Delete</th>
+                            <th class="text-center" scope="col-1">Creation Date</th>
+                            <th class="text-center" scope="col-1">Expiry Date</th>
                             <% } %>
                     </tr>
 
@@ -38,23 +57,39 @@
                                 <%= surveyList[count].name %>
                             </td>
                             <td class="class text-center col-1">
-                                    <a href="/survey-list/view/<%= surveyList[count].id %>"
+                                    <a href="/survey-list/view/<%= surveyList[count].id %>/<%= surveyList[count].type %>/<%= surveyList[count].numQuestions %>"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
                                         class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
                                         <b>View Survey</b></a>
 
                             <% if(typeof displayName=='string' && displayName) { %>
                                 <td class="text-center col-1">
-                                    <a href="/survey-list/edit/<%= surveyList[count].id %>"
+                                    <a href="/survey-list/edit/<%= surveyList[count].id %>/"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
-                                        class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i>
+                                        class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i>
                                         <b>Update</b></a>
+                                </td>
+                                <td class="text-center col-1">
+                                    <a href="/survey-list/results/<%= surveyList[count].id %>/<%= surveyList[count].numQuestions %>"
+                                        class="btn btn-success btn-sm" id="success"><i class="fas fa-check"> <span
+                                                style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                                                Results</span></i></a>
                                 </td>
                                 <td class="text-center col-1">
                                     <a href="/survey-list/delete/<%= surveyList[count].id %>"
                                         class="btn btn-danger btn-sm" id="danger"><i class="fas fa-trash-alt"> <span
                                                 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
                                                 Delete</span></i></a>
+                                </td>
+                                <td class="text-center col-1">
+                                    <% let create = surveyList[count].createdAt%>
+                                    <%let createF = create.toString()%>
+                                    <%=createF.substring(0,21)%>
+                                </td>
+                                <td class="text-center col-1">
+                                    <% let date = surveyList[count].expireAt%>
+                                    <%let dateF = date.toString()%>
+                                    <%=dateF.substring(0,21)%>
                                 </td>
                                     <% } %>
                                 <% } %>
@@ -63,6 +98,7 @@
                         <% } %>
                 </table>
                 <% } %>
+                 <% } %>
 
                 <% if(typeof displayName=='string' && displayName) { %>
                     <br>
@@ -78,11 +114,12 @@
                     <br>
                     <h2>All Surveys</h2>
                     <% } %>
-                <table class="table table-bordered table-striped table-hover col-md-6">
+                <table class="table table-bordered table-striped table-hover col-md-7">
                     <!-- Header Row-->
                     <tr>
                         <th class="text-center" scope="col-3">Name</th>
                         <th class="text-center" scope="col-3">Survey Link</th>
+                        <th class="text-center" scope="col-1">Expiry Date</th>
                         
                     </tr>
 
@@ -95,10 +132,15 @@
                                 <%= surveyList[count].name %>
                             </td>
                             <td class="class text-center col-1">
-                                    <a href="/survey-list/view/<%= surveyList[count].id %>"
+                                    <a href="/survey-list/view/<%= surveyList[count].id %>/<%= surveyList[count].type %>/<%= surveyList[count].numQuestions %>"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
                                         class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
-                                        <b>View Survey</b></a>
+                                        <b>View Survey</b></a></td>
+                                        <td class="text-center col-1">
+                                            <% let date = surveyList[count].expireAt%>
+                                            <%let dateF = date.toString()%>
+                                            <%=dateF.substring(0,21)%>
+                                        </td>
                         </tr>
 
                         <% } %>
@@ -107,14 +149,21 @@
                         <% if(!displayName) { %>
                           <% for(let count=0; count < surveyList.length; count++) { %>
                         <tr>
-                            <td class="class text-center col-1">
+                            <td class="class text-center col-3">
                                 <%= surveyList[count].name %>
                             </td>
-                            <td class="class text-center col-1">
-                                    <a href="/survey-list/view/<%= surveyList[count].id %>"
+                            <td class="class text-center col-3">
+                                    <a href="/survey-list/view/<%= surveyList[count].id %>/<%= surveyList[count].type %>/<%= surveyList[count].numQuestions %>"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
                                         class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
                                         <b>View Survey</b></a>
+                                        </td>
+                                        <td class="text-center col-1">
+                                            <% let date = surveyList[count].expireAt%>
+                                            <%let dateF = date.toString()%>
+                                            <%=dateF.substring(0,21)%>
+                                        </td>
+                                    
                         </tr>
                         <% } %>
                         <% } %>

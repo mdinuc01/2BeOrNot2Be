@@ -26,7 +26,7 @@ function requireAuth(req, res, next)
     next();
 }
 
-/* GET Route for the Contact List Page - READ Operation */
+/* GET Route for the Survey List Page - READ Operation */
 router.get('/', surveyController.displaySurveyList);
 
 /* GET Route for displaying the Add Page - CREATE Operation */
@@ -42,12 +42,18 @@ router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
 router.post('/edit/:id', surveyController.processEditPage);
 
 /* GET Route for displaying the View Page - UPDATE Operation */
-router.get('/view/:id', surveyController.displayViewPage);
+router.get('/view/:id/:type/:numQuestions', surveyController.displayViewPage);
 
 /* POST Route for processing the View Page - UPDATE Operation */
-router.post('/view/:id', surveyController.processViewPage);
+router.post('/view/:id/:type/:numQuestions', surveyController.processViewPage);
 
 /* GET Route to perform Deleteion - DELETE Operation */
 router.get('/delete/:id', requireAuth, surveyController.performDelete);
+
+/* GET Route for the Results List Page - READ Operation */
+router.get('/results/:id/:questions', surveyController.displayResults);
+
+/* GET Route for downloading results*/
+router.get('/download/:id', surveyController.processDownload);
 
 module.exports = router;

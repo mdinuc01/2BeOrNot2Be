@@ -12,9 +12,9 @@
       
       {
         answeredOn: { type: Date, default: Date.now },
-        surveyName: String,
+        surveyId: String,
         type: String,  
-        numQuestions: Number,
+        numQuestions: String,
         a1: String,
         a2: String, 
         a3: String, 
@@ -25,6 +25,7 @@
         a8: String,
         a9: String,
         a10: String,
+        answeredBy: String
     }, 
     {
         collection: "answer"

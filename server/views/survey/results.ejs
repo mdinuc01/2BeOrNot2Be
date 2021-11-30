@@ -1,0 +1,154 @@
+   <!--
+    File Name: list.ejs
+    Group 2: 2BeOrNot2Be 
+    -->
+
+<%- include ../Partials/header.ejs%>
+<%- include ../Partials/main_nav.ejs%>
+
+        <main class="container-fluid">
+            <%let questionNum = 1 %>
+            <%let counter = 0 %>
+             <% for(let count=0; count < answerList.length; count++) { %>
+            <% if(answerList[count].surveyId == surveyId) { %>
+             <%counter++ %>
+             <% } %>
+             <% } %>
+            <div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid jum">
+                <h1>
+                    <%= title %>
+                </h1>  
+                <br>
+                <% if(counter < 1) { %>
+                <h2>This survery hasn't been answered yet</h2>
+                <br>
+                 <a href="/survey-list" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Suverys Page</b></a>
+
+                <% } else { %>
+                    <h4>Survey Participants</h4>
+                    <table class="table table-bordered table-striped table-hover col-md-3">
+                    <tr>
+                    <th class="text-center" scope="col-1">Submission</th>
+                    <th class="text-center" scope="col-1">Answered By</th>
+                    <th class="text-center" scope="col-1">Answered On</th>
+                    </tr>
+                    <% let answerP = 1%>
+                    <% for(let counts=0; counts < answerList.length; counts++) { %>
+                    <% if(answerList[counts].surveyId == surveyId) { %>
+                    <tr>
+                        <td class="class text-center col-1">
+                            <p><%=answerP%></p>
+                            <% answerP++%>
+                        </td>
+                        <td class="class text-center col-1">
+                            <% if(answerList[counts].answeredBy == "Unknown") { %>
+                            <span>Unregistered User</span>
+                            <% }  else {%>
+                            <span>Registered User</span>
+                            <% } %>
+                            </td>
+                            <td class="class text-center col-1">
+                                <%let date = answerList[counts].answeredOn%>
+                                <%let dateF = date.toString()%>
+                                <%=dateF.substring(0,21)%>
+                                 </td>
+                    </tr>
+                    <% } %>
+                    <% } %>
+                </table>
+                <br>
+                
+                 <% for(let count=1; count <= questions; count++) { %>
+                 <h3></h3>
+                 <%if (count ==1) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q1%></h4>
+                 <%} else if(count ==2) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q2%></h4>
+                 <%} else if(count ==3) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q3%></h4>
+                 <%} else if(count ==4) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q4%></h4>
+                 <%} else if(count ==5) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q5%></h4>
+                 <%} else if(count ==6) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q6%></h4>
+                 <%} else if(count ==7) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q7%></h4>
+                 <%} else if(count ==8) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q8%></h4>
+                 <%} else if(count ==9) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q9%></h4>
+                 <%} else if(count ==10) {%>
+                 <h4>Question <%=count%> - <%=surveyToView.q10%></h4>
+                 <% } %>
+                 
+                
+                <table class="table table-bordered table-striped table-hover col-md-6">
+                    <!-- Header Row-->
+                    <tr>
+                        <th class="text-center" scope="col-1">Submission</th>
+                        <th class="text-center" scope="col-5">Answer</th>
+                        
+                        
+                    </tr>
+                    
+                    <!-- Repeatable Template Row-->
+                    <% let submission = 1%>
+                    <% for(let counts=0; counts < answerList.length; counts++) { %>
+                    
+                        <% if(answerList[counts].surveyId == surveyId) { %>
+                        <tr>
+                            <td class="class text-center col-1">
+                                <p><%=submission%></p>
+                                <% submission++%>
+                            </td>
+                            <td class="class text-center col-5">
+                                <% if(count == 1) { %>
+                                    <%=answerList[counts].a1%>
+                                <% }else if(count == 2) { %>
+                                    <%=answerList[counts].a2%>
+                                <% } else if(count == 3) { %>
+                                    <%=answerList[counts].a3%>
+                                <% } else if(count == 4) { %>
+                                    <%=answerList[counts].a4%>
+                                <% } else if(count == 5) { %>
+                                    <%=answerList[counts].a5%>
+                                <% } else if(count == 6) { %>
+                                    <%=answerList[counts].a6%>
+                                <% } else if(count == 7) { %>
+                                <%=answerList[counts].a7%>
+                                <% } else if(count == 8) { %>
+                                <%=answerList[counts].a8%>
+                                <% } else if(count == 9) { %>
+                                <%=answerList[counts].a9%>
+                                <% } else if(count == 10) { %>
+                                    <%=answerList[counts].a10%>
+                                <% } %>
+                                
+                                
+                                    </td>
+                                    
+                        </tr>
+
+                        <% } %>
+                        <% } %>
+                        
+                </table>
+                <br>
+                <% } %>
+                
+                <a href="/download/<%= answerList[1].surveyId %>" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
+                        class="btn btn-primary" role="button" id="downloadAnchorElem"><i class="fas fa-download"></i>
+                        <b>Download Results</b></a>
+                        <a href="/survey-list" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Suverys Page</b></a>
+                        <% } %>
+               <br>
+               <br>
+            </div>
+
+            </div>
+
+            <%- include ../Partials/bottom_nav.ejs%>
+
+                <%- include ../Partials/footer.ejs%>
+                <script src="/Scripts/results.js"></script>

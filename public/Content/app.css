@@ -64,15 +64,7 @@
       position: relative;
     }
     
-    input {
-      display: table-cell;
-      position: relative;
-      left: 80%;
-      bottom: 24px;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      margin: 5px;
-    }
-    
+
     .inputAreas{
       left:13%;
     }
@@ -80,6 +72,7 @@
     textarea {
       position: relative;
       right: 50px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     
     .button {
@@ -146,23 +139,29 @@
       font-size: 21px;
       position: relative;
       left: 30px;
-      top: 11px;
+      top: 20px;
     }
     
     table {
       font-family: verdana;
     }
     
-    .form-control {
-      width: 60%;
+    .form-control{
+      width: 67%;
+      margin-top: 15px;
     }
     
-    #addsurvey {
+    #addsurvey, #downloadAnchorElem{
       position: relative;
       left: 100px;
       width: 130px;
     }
-    
+    #return {
+      position: relative;
+      left: 100px;
+      width: 130px;
+      height: 85px;
+    }
     #displayName.hover {
       color: #DBDED5;
     }
@@ -239,13 +238,7 @@
       bottom: 24px;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
-    
-    #username, #name, #email, #password, 
-    #newpassword, #newpassword2
-    {
-      width: 70%;
-    }
-    
+   
     }
     
     #passwordError,#passwordError2,#passwordError3, #emailError, #usernameError, #nameError{
@@ -270,6 +263,7 @@
       position: relative;
       left: 20%;
       bottom: 40px;
+      
     }
     
     #mc, #sa {
@@ -368,7 +362,7 @@
     }
     
     #cancel-btn {
-      margin: 5px;
+    margin: 5px;
      position: relative;
      left: 50%;
      bottom: 24px;

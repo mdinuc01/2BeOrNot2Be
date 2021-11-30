@@ -7,12 +7,12 @@
 let express = require('express');
 let router = express.router;
 let mongoose = require('mongoose');
-
 let jwt = require('jsonwebtoken'); 
 
 // create a reference to the db model
 let Survey = require('../models/survey');
 let Answer = require('../models/answer');
+const { NotImplemented } = require('http-errors');
 
 module.exports.displaySurveyList = (req, res, next) => {
     Survey.find((err, surveyList) => {
@@ -53,6 +53,12 @@ module.exports.displayAddPage = (req, res, next) => {
 
 module.exports.processAddPage = (req, res, next) => {
     
+    // const today = new Date();
+    // const tomorrow = new Date(today);
+    // let expiry = tomorrow.setDate(tomorrow.getDate() + req.params.expires);
+
+    // console.log(expiry);
+
     let newSurvey = Survey({
         "name": req.body.name,
         "ownedBy": req.user.id,
@@ -119,7 +125,7 @@ module.exports.processAddPage = (req, res, next) => {
         "numQuestions": req.params.num, 
         "type": req.params.type,
         "createdAt": Date.now(),
-        "expiresIn": req.params.expires
+        //expireAt: expiry
     });
 
     Survey.create(newSurvey, (err, Survey) => {
@@ -268,57 +274,53 @@ module.exports.displayViewPage = (req, res, next) => {
                 res.render('survey/view', 
                 {title: 'Survey',
                 survey: surveyToView,
+                type: req.params.type,
                 displayName: req.user ? req.user.displayName : ''})
             }
                 else{
                 res.render('survey/view', 
                 {title: 'Survey',
                 survey: surveyToView,
+                type: req.params.type,
+                name: surveyToView.name,
                 id: req.user.id,
-                displayName: req.user ? req.user.displayName : ''})
+                displayName: req.user ? req.user.displayName : ''});
             }
+            
         }
     });
 }
 
 
 module.exports.processViewPage = (req, res, next) => {
-    let a1;
-    let a2;
-    let a3;
-    let a4;
-    let a5;
-    let a6;
-    let a7;
-    let a8;
-    let a9;
-    let a10;
-
-    if(req.body.a1.checked()){
-        a1 = req.body.a1;
-    } else if(req.body.a2.checked()){
-        a1 = req.body.a2;
-    } else if(req.body.a3.checked()){
-        a1 = req.body.a3;
-    } else if(req.body.a4.checked()){
-        a1 = req.body.a4;
+ 
+   if(req.params.type == 'SA'){
+   
+    let survey = req.params.id;
+    let user;
+    if(!req.user){
+        user = "Unknown";
+        
+    } else{
+        user = req.user.id; 
     }
-
+    
     let newAnswer = Answer({
-        "surveyName": req.params.name,
-        "a1": a1,
-        "a2": a2,
-        "a3": a3,
-        "a4": a4,
-        "a5": a5,
-        "a6": a6,
-        "a7": a7,
-        "a8": a8,
-        "a9": a9,
-        "a10": a10,
-        "numQuestions": req.params.num, 
-        "type": req.params.type,
-        "answeredOn": Date.now()
+        "surveyId": survey,
+        "a1": req.body.q1A1SAView,
+        "a2": req.body.q2A1SAView,
+        "a3": req.body.q3A1SAView,
+        "a4": req.body.q4A1SAView,
+        "a5": req.body.q5A1SAView,
+        "a6": req.body.q6A1SAView,
+        "a7": req.body.q7A1SAView,
+        "a8": req.body.q8A1SAView,
+        "a9": req.body.q9A1SAView,
+        "a10":req.body.q10A1SAView,
+        "answeredOn": Date.now(),
+        "answeredBy": user, 
+        "numQuestions": req.params.numQuestions
+        
     });
 
     Answer.create(newAnswer, (err, Answer) => {
@@ -333,4 +335,92 @@ module.exports.processViewPage = (req, res, next) => {
             }
     });
 
+}
+
+else if(req.params.type == 'MA'){
+    
+    let survey = req.params.id;
+    let user;
+    if(!req.user){
+        user = "Unknown";
+        
+    } else{
+        user = req.user.id; 
+    }
+    
+    let newAnswer = Answer({
+        "surveyId": survey,
+        "a1": req.body.q1,
+        "a2": req.body.q2,
+        "a3": req.body.q3,
+        "a4": req.body.q4,
+        "a5": req.body.q5,
+        "a6": req.body.q6,
+        "a7": req.body.q7,
+        "a8": req.body.q8,
+        "a9": req.body.q9,
+        "a10":req.body.q10,
+        "answeredOn": Date.now(),
+        "answeredBy": user,
+        "numQuestions": req.params.numQuestions
+        
+    });
+
+    Answer.create(newAnswer, (err, Answer) => {
+        if(err)
+            {
+                console.log(err);
+                res.end(err);
+            }
+            else
+            {
+                res.redirect('/survey-list');
+            }
+    });
+
+}
+}
+
+module.exports.displayResults = (req, res, next) => {
+   
+
+    Answer.find((err, answers) => {
+        if(err)
+        {
+            return console.error(err);    
+        }
+        if (!req.user){
+            res.redirect('/survey-list');
+        }
+        else{
+            let id = req.params.id
+        Survey.findById(id, (err, surveyAnswered) => {
+            if(err)
+        {
+            return console.error(err);    
+        }
+        if (!req.user){
+            res.redirect('/survey-list');
+        }
+        else{
+         res.render('survey/results', 
+        {title: 'Results', 
+        answerList: answers,
+        id: id,
+        surveyToView: surveyAnswered,
+        surveyId: req.params.id,
+        questions: req.params.questions,
+        displayName: req.user ? req.user.displayName : ''});
+    }
+    })
+   
+        }
+       
+    });
+}
+
+module.exports.processDownload = (req, res, next) => {
+    let id = req.params.id;
+    res.redirect('/results');
+    
 }
