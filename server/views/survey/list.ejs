@@ -59,25 +59,25 @@
                             <td class="class text-center col-1">
                                     <a href="/survey-list/view/<%= surveyList[count].id %>/<%= surveyList[count].type %>/<%= surveyList[count].numQuestions %>"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
-                                        class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
+                                        class="btn btn-outline-primary btn-sm"><i class="far fa-eye"></i>
                                         <b>View Survey</b></a>
 
                             <% if(typeof displayName=='string' && displayName) { %>
                                 <td class="text-center col-1">
                                     <a href="/survey-list/edit/<%= surveyList[count].id %>/"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
-                                        class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i>
+                                        class="btn btn-outline-warning btn-sm"><i class="fas fa-pencil-alt"></i>
                                         <b>Update</b></a>
                                 </td>
                                 <td class="text-center col-1">
                                     <a href="/survey-list/results/<%= surveyList[count].id %>/<%= surveyList[count].numQuestions %>"
-                                        class="btn btn-success btn-sm" id="success"><i class="fas fa-check"> <span
+                                        class="btn btn-outline-success btn-sm" id="success"><i class="fas fa-check"> <span
                                                 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
                                                 Results</span></i></a>
                                 </td>
                                 <td class="text-center col-1">
                                     <a href="/survey-list/delete/<%= surveyList[count].id %>"
-                                        class="btn btn-danger btn-sm" id="danger"><i class="fas fa-trash-alt"> <span
+                                        class="btn btn-outline-danger btn-sm" id="danger"><i class="fas fa-trash-alt"> <span
                                                 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
                                                 Delete</span></i></a>
                                 </td>
@@ -134,7 +134,7 @@
                             <td class="class text-center col-1">
                                     <a href="/survey-list/view/<%= surveyList[count].id %>/<%= surveyList[count].type %>/<%= surveyList[count].numQuestions %>"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
-                                        class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
+                                        class="btn btn-outline-primary btn-sm"><i class="far fa-eye"></i>
                                         <b>View Survey</b></a></td>
                                         <td class="text-center col-1">
                                             <% let date = surveyList[count].expireAt%>
@@ -155,7 +155,7 @@
                             <td class="class text-center col-3">
                                     <a href="/survey-list/view/<%= surveyList[count].id %>/<%= surveyList[count].type %>/<%= surveyList[count].numQuestions %>"
                                         style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
-                                        class="btn btn-primary btn-sm"><i class="far fa-eye"></i>
+                                        class="btn btn-outline-primary btn-sm"><i class="far fa-eye"></i>
                                         <b>View Survey</b></a>
                                         </td>
                                         <td class="text-center col-1">
