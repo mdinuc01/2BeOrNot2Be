@@ -1,0 +1,99 @@
+   <!--
+    File Name: expired.ejs
+    Group 2: 2BeOrNot2Be 
+    -->
+
+<%- include ../Partials/header.ejs%>
+<%- include ../Partials/main_nav.ejs%>
+
+        <main class="container-fluid">
+
+            <div class="jumbotron bg-light p-5 rounded-lg m-3 container-fluid jum">
+                <h1>
+                    <%= title %>
+                </h1>
+                <% if(typeof displayName=='string' && displayName) { %>
+                <%let counter =0%>
+                <% for(let count=0; count < surveyList.length; count++) { %>
+                <% if(surveyList[count].ownedBy == id) { %>
+             <%counter++ %>
+             <% } %>
+             <% } %>
+
+                
+                    <br>
+                    <br>
+                    <% if(counter < 1) { %>
+                        <div style="background-color: rgb(165, 164, 164); height: 200px; border-radius: 5px;">
+                           <br> 
+                           <br>
+                        <h2 style="text-align: center;">You don't have any expired suverys yet!</h2>
+                        <h3 style="text-align: center;">Go back to the survey page to make a new survey</h3>
+                        </div>
+
+                <% } else { %>
+                
+                <%let date = new Date();%>
+                
+                
+
+                <table class="table table-bordered table-striped table-hover col-md-5">
+                    <!-- Header Row-->
+                    <tr>
+                        <th class="text-center" scope="col-1">Name</th>
+                        <th class="text-center" scope="col-1">Survey Link</th>
+                        <% if(typeof displayName=='string' && displayName) { %>
+                            <th class="text-center" scope="col-1">Results</th>
+                            <th class="text-center" scope="col-1">Creation Date</th>
+                            <th class="text-center" scope="col-1">Expiry Date</th>
+                            <% } %>
+                    </tr>
+
+                    
+                    <!-- Repeatable Template Row-->
+                    <% for(let count=0; count < surveyList.length; count++) { %>
+                        <% if(surveyList[count].ownedBy == id && date > surveyList[count].expireAt) { %>
+                        <tr>
+                            <td class="class text-center col-1">
+                                <%= surveyList[count].name %>
+                            </td>
+                            <td class="class text-center col-1">
+                                    <a href="/survey-list/expiredView/<%= surveyList[count].id %>/<%= surveyList[count].type %>/<%= surveyList[count].numQuestions %>"
+                                        style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
+                                        class="btn btn-outline-primary btn-sm"><i class="far fa-eye"></i>
+                                        <b>View Survey</b></a>
+
+                            <% if(typeof displayName=='string' && displayName) { %>
+                                
+                                <td class="text-center col-1">
+                                    <a href="/survey-list/expiredResults/<%= surveyList[count].id %>/<%= surveyList[count].numQuestions %>"
+                                        class="btn btn-outline-success btn-sm" id="success"><i class="fas fa-check"> <span
+                                                style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                                                Results</span></i></a>
+                                </td>
+                                
+                                <td class="text-center col-1">
+                                    <% let create = surveyList[count].createdAt%>
+                                    <%let createF = create.toString()%>
+                                    <%=createF.substring(0,21)%>
+                                </td>
+                                <td class="text-center col-1">
+                                    <% let date = surveyList[count].expireAt%>
+                                    <%let dateF = date.toString()%>
+                                    <%=dateF.substring(0,21)%>
+                                </td>
+                                    <% } %>
+                                <% } %>
+                        </tr>
+
+                        <% } %>
+                </table>
+                <% } %>
+                 <% } %>
+
+                
+            </div>
+
+            <%- include ../Partials/bottom_nav.ejs%>
+
+                <%- include ../Partials/footer.ejs%>

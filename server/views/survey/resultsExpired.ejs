@@ -1,5 +1,5 @@
    <!--
-    File Name: list.ejs
+    File Name: resultsExpired.ejs
     Group 2: 2BeOrNot2Be 
     -->
 
@@ -20,9 +20,9 @@
                 </h1>  
                 <br>
                 <% if(counter < 1) { %>
-                <h2 style="text-align: center;">This survery hasn't been answered yet</h2>
+                <h2 style="text-align: center;">This survery was never answered</h2>
                 <br>
-                 <a href="/survey-list" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Suverys Page</b></a>
+                 <a href="/survey-list/expired" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Suverys Page</b></a>
 
                 <% } else { %>
                     <h4>Survey Participants</h4>
@@ -137,10 +137,10 @@
                 <br>
                 <% } %>
                 
-                <a href="/download/<%= answerList[1].surveyId %>" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
+                <a  style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
                         class="btn btn-primary" role="button" id="downloadAnchorElem"><i class="fas fa-download"></i>
                         <b>Download Results</b></a>
-                        <a href="/survey-list" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Suverys Page</b></a>
+                        <a href="/survey-list/expired" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Suverys Page</b></a>
                         <% } %>
                <br>
                <br>

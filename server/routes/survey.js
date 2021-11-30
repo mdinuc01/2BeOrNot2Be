@@ -56,4 +56,12 @@ router.get('/results/:id/:questions', surveyController.displayResults);
 /* GET Route for downloading results*/
 router.get('/download/:id', surveyController.processDownload);
 
+/* GET Route for the Expired Survey List Page - READ Operation */
+router.get('/expired', surveyController.displayExpiredList);
+
+/* GET Route for the Expired Results List Page - READ Operation */
+router.get('/expiredResults/:id/:questions', surveyController.displayExpiredResults);
+
+/* GET Route for displaying the Expired View Page - UPDATE Operation */
+router.get('/expiredView/:id/:type/:numQuestions', surveyController.displayExpiredViewPage);
 module.exports = router;

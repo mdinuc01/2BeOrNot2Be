@@ -302,7 +302,7 @@ module.exports.processViewPage = (req, res, next) => {
         user = "Unknown";
         
     } else{
-        user = req.user.id; 
+        user = req.user.displayName; 
     }
     
     let newAnswer = Answer({
@@ -345,7 +345,7 @@ else if(req.params.type == 'MA'){
         user = "Unknown";
         
     } else{
-        user = req.user.id; 
+        user = req.user.displayName; 
     }
     
     let newAnswer = Answer({
@@ -423,4 +423,93 @@ module.exports.processDownload = (req, res, next) => {
     let id = req.params.id;
     res.redirect('/results');
     
+}
+
+module.exports.displayExpiredList = (req, res, next) => {
+    Survey.find((err, surveyList) => {
+        if(err)
+        {
+            return console.error(err);    
+        }
+        if (!req.user){
+            res.redirect('/survey-list');
+        }
+        else{
+            res.render('survey/expired', 
+        {title: 'Expired Surveys', 
+        surveyList: surveyList,
+        id: req.user.id,
+        displayName: req.user ? req.user.displayName : ''});
+        }
+        
+    });
+}
+
+module.exports.displayExpiredResults = (req, res, next) => {
+   
+
+    Answer.find((err, answers) => {
+        if(err)
+        {
+            return console.error(err);    
+        }
+        if (!req.user){
+            res.redirect('/survey-list/expired');
+        }
+        else{
+            let id = req.params.id
+        Survey.findById(id, (err, surveyAnswered) => {
+            if(err)
+        {
+            return console.error(err);    
+        }
+        if (!req.user){
+            res.redirect('/survey-list/expired');
+        }
+        else{
+         res.render('survey/resultsExpired', 
+        {title: 'Results', 
+        answerList: answers,
+        id: id,
+        surveyToView: surveyAnswered,
+        surveyId: req.params.id,
+        questions: req.params.questions,
+        displayName: req.user ? req.user.displayName : ''});
+    }
+    })
+   
+        }
+       
+    });
+}
+
+module.exports.displayExpiredViewPage = (req, res, next) => {
+    let id = req.params.id;
+
+    Survey.findById(id, (err, surveyToView) => {
+        if(err){
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            if (!req.user){
+                res.render('survey/view', 
+                {title: 'Survey',
+                survey: surveyToView,
+                type: req.params.type,
+                displayName: req.user ? req.user.displayName : ''})
+            }
+                else{
+                res.render('survey/viewExpired', 
+                {title: 'Expired Survey',
+                survey: surveyToView,
+                type: req.params.type,
+                name: surveyToView.name,
+                id: req.user.id,
+                displayName: req.user ? req.user.displayName : ''});
+            }
+            
+        }
+    });
 }

@@ -34,6 +34,11 @@
                 <% } else { %>
                 <h2>Your Surveys</h2>
                 
+                <%let date = new Date();
+                console.log(date)%>
+                
+                
+
                 <table class="table table-bordered table-striped table-hover col-md-6">
                     <!-- Header Row-->
                     <tr>
@@ -51,7 +56,7 @@
                     
                     <!-- Repeatable Template Row-->
                     <% for(let count=0; count < surveyList.length; count++) { %>
-                        <% if(surveyList[count].ownedBy == id) { %>
+                        <% if(surveyList[count].ownedBy == id && date < surveyList[count].expireAt) { %>
                         <tr>
                             <td class="class text-center col-1">
                                 <%= surveyList[count].name %>
@@ -122,11 +127,13 @@
                         <th class="text-center" scope="col-1">Expiry Date</th>
                         
                     </tr>
+                     <%let date = new Date();
+                console.log(date)%>
 
                     <!-- Repeatable Template Row-->
                     <% for(let count=0; count < surveyList.length; count++) { %>
                         <% if(typeof displayName=='string' && displayName) { %>
-                        <% if(surveyList[count].ownedBy != id) { %>
+                        <% if(surveyList[count].ownedBy != id && date < surveyList[count].expireAt) { %>
                         <tr>
                             <td class="class text-center col-1">
                                 <%= surveyList[count].name %>
@@ -146,8 +153,9 @@
                         <% } %>
                         <% } %>
                         <% } %>
-                        <% if(!displayName) { %>
+                        <% if(!displayName ) { %>
                           <% for(let count=0; count < surveyList.length; count++) { %>
+                          <%if( date < surveyList[count].expireAt) {%>
                         <tr>
                             <td class="class text-center col-3">
                                 <%= surveyList[count].name %>
@@ -163,7 +171,7 @@
                                             <%let dateF = date.toString()%>
                                             <%=dateF.substring(0,21)%>
                                         </td>
-                                    
+                                  <% } %>  
                         </tr>
                         <% } %>
                         <% } %>
