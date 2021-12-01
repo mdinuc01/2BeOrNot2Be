@@ -32,6 +32,9 @@ router.get('/', surveyController.displaySurveyList);
 /* GET Route for displaying the Add Page - CREATE Operation */
 router.get('/add', requireAuth, surveyController.displayAddPage);
 
+/* GET Route for displaying the Add Page (if the page is refreshed) - CREATE Operation */
+router.get('/add/:type/:num/:expires', requireAuth, surveyController.displayAddPage);
+
 /* POST Route for processing the Add Page - CREATE Operation */
 router.post('/add/:type/:num/:expires', requireAuth, surveyController.processAddPage);
 

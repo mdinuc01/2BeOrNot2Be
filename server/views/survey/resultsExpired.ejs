@@ -22,7 +22,7 @@
                 <% if(counter < 1) { %>
                 <h2 style="text-align: center;">This survery was never answered</h2>
                 <br>
-                 <a href="/survey-list/expired" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Suverys Page</b></a>
+                 <a href="/survey-list" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Previous Page</b></a>
 
                 <% } else { %>
                     <h4>Survey Participants</h4>
@@ -50,7 +50,7 @@
                             <td class="class text-center col-1">
                                 <%let date = answerList[counts].answeredOn%>
                                 <%let dateF = date.toString()%>
-                                <%=dateF.substring(0,21)%>
+                                <%=dateF.substring(0,21) + " Hours"%>
                                  </td>
                     </tr>
                     <% } %>
@@ -140,7 +140,7 @@
                 <a  style="font-family: Verdana, Geneva, Tahoma, sans-serif;"
                         class="btn btn-primary" role="button" id="downloadAnchorElem"><i class="fas fa-download"></i>
                         <b>Download Results</b></a>
-                        <a href="/survey-list/expired" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Suverys Page</b></a>
+                        <a href="/survey-list/expired" class="btn btn-warning" id="return"><i class="fas fa-undo-alt"></i><br><b>Return to <br>Previous Page</b></a>
                         <% } %>
                <br>
                <br>

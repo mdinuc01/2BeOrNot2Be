@@ -46,18 +46,29 @@
                                 <option>9</option>
                                 <option>10</option>
                             </select>
+
+                            <%let date = new Date;
+                            function addDays(date, days) {
+                            var result = new Date(date);
+                            result.setDate(result.getDate() + days);
+                            return result;
+                            }%>
+
+                            
+                            
+                            
                             <p id="expireTitle">Select Number of Days Survey will be available for: </p>
                             <select name="expiry" id="expiry" tabindex="5">
-                                <option value=86400>1</option>
-                                <option value=172800>2</option>
-                                <option value=259200>3</option>
-                                <option value=345600>4</option>
-                                <option value=432000>5</option>
-                                <option value=518400>6</option>
-                                <option value=604800>7</option>
-                                <option value=691200>8</option>
-                                <option value=777600>9</option>
-                                <option value=864000>10</option>
+                                <option value="<%=addDays(date, 1)%>">1</option>
+                                <option value="<%=addDays(date, 2)%>">2</option>
+                                <option value="<%=addDays(date, 3)%>">3</option>
+                                <option value="<%=addDays(date, 4)%>">4</option>
+                                <option value="<%=addDays(date, 5)%>">5</option>
+                                <option value="<%=addDays(date, 6)%>">6</option>
+                                <option value="<%=addDays(date, 7)%>">7</option>
+                                <option value="<%=addDays(date, 8)%>">8</option>
+                                <option value="<%=addDays(date, 9)%>">9</option>
+                                <option value="<%=addDays(date, 10)%>">10</option>
                             </select>
                         </fieldset>
                         <br>
@@ -71,7 +82,7 @@
                     <br>
                     <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
                     <a href="/survey-list/add" class="btn btn-warning"><i class="fas fa-undo"></i> Restart</a>
-                    <a href="/survey-list" class="btn btn-danger"><i class="fas fa-ban"></i> Cancel</a>
+                    <a href="/survey-list" class="btn btn-dark"><i class="fas fa-ban"></i> Cancel</a>
                     <br>
                     <br>
                 </form>

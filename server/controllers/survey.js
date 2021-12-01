@@ -125,7 +125,7 @@ module.exports.processAddPage = (req, res, next) => {
         "numQuestions": req.params.num, 
         "type": req.params.type,
         "createdAt": Date.now(),
-        //expireAt: expiry
+        expireAt: req.params.expires
     });
 
     Survey.create(newSurvey, (err, Survey) => {

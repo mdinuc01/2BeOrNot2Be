@@ -34,8 +34,7 @@
                 <% } else { %>
                 <h2>Your Surveys</h2>
                 
-                <%let date = new Date();
-                console.log(date)%>
+                <%let date = new Date();%>
                 
                 
 
@@ -89,12 +88,12 @@
                                 <td class="text-center col-1">
                                     <% let create = surveyList[count].createdAt%>
                                     <%let createF = create.toString()%>
-                                    <%=createF.substring(0,21)%>
+                                    <%=createF.substring(0,21) + " Hours"%>
                                 </td>
                                 <td class="text-center col-1">
                                     <% let date = surveyList[count].expireAt%>
                                     <%let dateF = date.toString()%>
-                                    <%=dateF.substring(0,21)%>
+                                    <%=dateF.substring(0,21) + " Hours"%>
                                 </td>
                                     <% } %>
                                 <% } %>
@@ -146,7 +145,7 @@
                                         <td class="text-center col-1">
                                             <% let date = surveyList[count].expireAt%>
                                             <%let dateF = date.toString()%>
-                                            <%=dateF.substring(0,21)%>
+                                            <%=dateF.substring(0,21) + " Hours"%>
                                         </td>
                         </tr>
 
@@ -169,7 +168,7 @@
                                         <td class="text-center col-1">
                                             <% let date = surveyList[count].expireAt%>
                                             <%let dateF = date.toString()%>
-                                            <%=dateF.substring(0,21)%>
+                                            <%=dateF.substring(0,21) + " Hours"%>
                                         </td>
                                   <% } %>  
                         </tr>

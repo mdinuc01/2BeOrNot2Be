@@ -5,11 +5,10 @@ let expiry = document.getElementById("expiry");
 let questions = document.getElementById("questions").parentNode;
 let child = document.getElementById("child");
 
-
 function pageSetup() {
 
     if (sa.checked) {
-            history.pushState(null, 'Short Answer','/survey-list/add/SA/' + numOfQuestions.value + '/' + expiry.value);
+            history.replaceState(null, 'Short Answer','/survey-list/add/SA/' + numOfQuestions.value + '/' + expiry.value);
             remove();
             questions.insertAdjacentHTML("beforeend", '<div id="child"></div>');
             let child = document.getElementById("child");
@@ -18,7 +17,7 @@ function pageSetup() {
            child.insertAdjacentHTML("beforeend",  '<input type="text" class="form-control inputAreas" id="q' + i +'TextField" placeholder="Enter Question " name="q'+ i +'" required tableindex '+(5+i)+'>');
         }
     } else if (mc.checked) {
-        history.pushState(null, 'Short Answer','/survey-list/add/MA/' + numOfQuestions.value + '/' + expiry.value);
+        history.replaceState(null, 'Short Answer','/survey-list/add/MA/' + numOfQuestions.value + '/' + expiry.value);
         remove();
             questions.insertAdjacentHTML("beforeend", '<div id="child"></div>');
             let child = document.getElementById("child");
@@ -34,8 +33,18 @@ function remove(){
     document.getElementById("child").remove();
 }
 
+function addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
+  let date = new Date;
+  let datef = addDays(date, 1);
+
 function addEventListener(){
-    history.pushState(null, 'Short Answer','add/SA/1/86400');
+
+    history.replaceState(null, 'Short Answer','/survey-list/add/SA/1/' + datef);
     
     for(i = 1; i <= numOfQuestions.value; i++){
         child.insertAdjacentHTML("beforeend",'<label> Question ' + i + ':');
@@ -55,5 +64,3 @@ function addEventListener(){
 }
 
 window.addEventListener("onload", addEventListener);
-
-

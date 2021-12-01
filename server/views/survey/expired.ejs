@@ -75,12 +75,12 @@
                                 <td class="text-center col-1">
                                     <% let create = surveyList[count].createdAt%>
                                     <%let createF = create.toString()%>
-                                    <%=createF.substring(0,21)%>
+                                    <%=createF.substring(0,21) + " Hours"%>
                                 </td>
                                 <td class="text-center col-1">
                                     <% let date = surveyList[count].expireAt%>
                                     <%let dateF = date.toString()%>
-                                    <%=dateF.substring(0,21)%>
+                                    <%=dateF.substring(0,21) + " Hours"%>
                                 </td>
                                     <% } %>
                                 <% } %>
