@@ -162,7 +162,28 @@ module.exports.displayEditPage = (req, res, next) => {
 }
 
 module.exports.processEditPage = (req, res, next) => {
-    let id = req.params.id
+    let id = req.params.id;
+    let expire;
+
+    Survey.findById(id, (err, surveyToEdit) => {
+        if(err){
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            if (!req.user){
+                res.render('survey/view', 
+                {title: 'Survey',
+                survey: surveyToView,
+                type: req.params.type,
+                displayName: req.user ? req.user.displayName : ''})
+            }
+                else{
+                
+                expire = surveyToEdit.expireAt;
+            }
+        }
 
     let updatedSurvey = Survey({
         "_id" : id,
@@ -226,8 +247,12 @@ module.exports.processEditPage = (req, res, next) => {
         "q10A1": req.body.q10A1,
         "q10A2": req.body.q10A2,
         "q10A3": req.body.q10A3,
-        "q10A4": req.body.q10A4
+        "q10A4": req.body.q10A4,
+        "expireAt": expire
+        
     });
+
+
 
     Survey.updateOne({_id: id}, updatedSurvey, (err) => {
         if(err)
@@ -241,7 +266,9 @@ module.exports.processEditPage = (req, res, next) => {
             res.redirect('/survey-list');
         }
     });
+});
 }
+
 
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
