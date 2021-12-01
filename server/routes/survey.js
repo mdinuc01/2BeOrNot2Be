@@ -56,9 +56,6 @@ router.get('/delete/:id', requireAuth, surveyController.performDelete);
 /* GET Route for the Results List Page - READ Operation */
 router.get('/results/:id/:questions', surveyController.displayResults);
 
-/* GET Route for downloading results*/
-router.get('/download/:id', surveyController.processDownload);
-
 /* GET Route for the Expired Survey List Page - READ Operation */
 router.get('/expired', surveyController.displayExpiredList);
 

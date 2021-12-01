@@ -446,12 +446,6 @@ module.exports.displayResults = (req, res, next) => {
     });
 }
 
-module.exports.processDownload = (req, res, next) => {
-    let id = req.params.id;
-    res.redirect('/results');
-    
-}
-
 module.exports.displayExpiredList = (req, res, next) => {
     Survey.find((err, surveyList) => {
         if(err)
