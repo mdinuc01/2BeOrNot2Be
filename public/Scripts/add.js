@@ -8,6 +8,7 @@ let child = document.getElementById("child");
 function pageSetup() {
 
     if (sa.checked) {
+        
             history.replaceState(null, 'Short Answer','/survey-list/add/SA/' + numOfQuestions.value + '/' + expiry.value);
             remove();
             questions.insertAdjacentHTML("beforeend", '<div id="child"></div>');
@@ -33,16 +34,19 @@ function remove(){
     document.getElementById("child").remove();
 }
 
-function addDays(date, days) {
+
+function addEventListener(){
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
+    function addDays(date, days) {
     var result = new Date(date);
     result.setDate(result.getDate() + days);
     return result;
-  }
+    }
+      let datef = addDays(dateTime, 1);
 
-  let date = new Date;
-  let datef = addDays(date, 1);
-
-function addEventListener(){
 
     history.replaceState(null, 'Short Answer','/survey-list/add/SA/1/' + datef);
     
