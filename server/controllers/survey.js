@@ -7,13 +7,10 @@
 let express = require('express');
 let router = express.router;
 let mongoose = require('mongoose');
-let jwt = require('jsonwebtoken'); 
 
 // create a reference to the db model
 let Survey = require('../models/survey');
 let Answer = require('../models/answer');
-const { NotImplemented } = require('http-errors');
-const { double } = require('cli-boxes');
 
 module.exports.displaySurveyList = (req, res, next) => {
     Survey.find((err, surveyList) => {
