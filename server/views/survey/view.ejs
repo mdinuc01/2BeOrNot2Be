@@ -19,126 +19,137 @@
             
 
     <% if(survey.type=='SA' && survey.numQuestions == 1) { %>
+    <br>
                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                 <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
         <% } if(survey.type=='SA' && survey.numQuestions == 2) { %>
+        <br>
                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                    <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
-                    <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                    <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
-            <% } if(survey.type=='SA' && survey.numQuestions ==3) { %>
-                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
-                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
-                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea>
-                <% } if(survey.type=='SA' && survey.numQuestions ==4) { %>
-                                <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
+                                <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
                                 <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
+            <% } if(survey.type=='SA' && survey.numQuestions ==3) { %>
+                <br>
+                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
+                                <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
+                                <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea><br>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
                                 <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea>
+                <% } if(survey.type=='SA' && survey.numQuestions ==4) { %>
+                    <br>
+                                <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
+                                <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
+                                <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea><br>
+                                <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
+                                <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea><br>
                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
                                 <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea>
                     <% } if(survey.type=='SA' && survey.numQuestions ==5) { %>
-                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                        <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
-                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                        <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
-                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                        <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea>
-                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                        <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea>
-                                        <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                        <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea>
-                        <% } if(survey.type=='SA' && survey.numQuestions ==6) { %>
+                        <br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
+                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
+                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea>
+                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea>
+                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
                                             <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea>
+                        <% } if(survey.type=='SA' && survey.numQuestions ==6) { %>
+                            <br>
+                                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
+                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
+                                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
+                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea><br>
+                                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
+                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea><br>
+                                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
+                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea><br>
+                                            <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
+                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
                                             <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea>
                             <% } if(survey.type=='SA' && survey.numQuestions ==7) { %>
+                                <br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
+                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
+                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea>
+                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea>
+                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea>
+                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                            <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea>
+                                            <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
                                             <textarea class="form-control" name="q7A1SAView" id="q7A1SAView"></textarea>
                                 <% } if(survey.type=='SA' && survey.numQuestions ==8) { %>
+                                    <br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
+                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
+                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea>
+                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea>
+                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea>
+                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                            <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea>
+                                            <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                            <textarea class="form-control" name="q7A1SAView" id="q7A1SAView"></textarea>
+                                            <textarea class="form-control" name="q7A1SAView" id="q7A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
                                             <textarea class="form-control" name="q8A1SAView" id="q8A1SAView"></textarea>
                                     <% } if(survey.type=='SA' && survey.numQuestions ==9) { %>
+                                        <br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
+                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
+                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea>
+                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea>
+                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea>
+                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                            <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea>
+                                            <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                            <textarea class="form-control" name="q7A1SAView" id="q7A1SAView"></textarea>
+                                            <textarea class="form-control" name="q7A1SAView" id="q7A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
-                                            <textarea class="form-control" name="q8A1SAView" id="q8A1SAView"></textarea>
+                                            <textarea class="form-control" name="q8A1SAView" id="q8A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q9"><%= survey.q9%></h4>
                                             <textarea class="form-control" name="q9A1SAView" id="q9A1SAView"></textarea>
                                         <% } if(survey.type=='SA' && survey.numQuestions ==10) { %>
+                                            <br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
-                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea>
+                                            <textarea class="form-control" name="q1A1SAView" id="q1A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q2"><%= survey.q2%></h4>
-                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea>
+                                            <textarea class="form-control" name="q2A1SAView" id="q2A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q3"><%= survey.q3%></h4>
-                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea>
+                                            <textarea class="form-control" name="q3A1SAView" id="q3A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q4"><%= survey.q4%></h4>
-                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea>
+                                            <textarea class="form-control" name="q4A1SAView" id="q4A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q5"><%= survey.q5%></h4>
-                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea>
+                                            <textarea class="form-control" name="q5A1SAView" id="q5A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q6"><%= survey.q6%></h4>
-                                            <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea>
+                                            <textarea class="form-control" name="q6A1SAView" id="q6A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q7"><%= survey.q7%></h4>
-                                            <textarea class="form-control" name="q7A1SAView" id="q7A1SAView"></textarea>
+                                            <textarea class="form-control" name="q7A1SAView" id="q7A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q8"><%= survey.q8%></h4>
-                                            <textarea class="form-control" name="q8A1SAView" id="q8A1SAView"></textarea>
+                                            <textarea class="form-control" name="q8A1SAView" id="q8A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q9"><%= survey.q9%></h4>
-                                            <textarea class="form-control" name="q9A1SAView" id="q9A1SAView"></textarea>
+                                            <textarea class="form-control" name="q9A1SAView" id="q9A1SAView"></textarea><br>
                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q10"><%= survey.q10%></h4>
                                             <textarea class="form-control" name="q10A1SAView" id="q10A1SAView"></textarea>
                                             <% } if(survey.type=='MA' && survey.numQuestions == 1) { %>
+                                                <br>
                                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                 <ul id="question1" >
                                                 <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -147,6 +158,7 @@
                                                 <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A4%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A4%></p></li>
                                                 </ul>
                                                 <% } if(survey.type=='MA' && survey.numQuestions ==2) { %>
+                                                    <br>
                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                     <ul id="question1" >
                                                     <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -163,6 +175,7 @@
                                                     <li><input type="radio" name=q2 value="<%=survey.q2A4%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q2A4%></p></li>
                                                     </ul>
                                                     <% } if(survey.type=='MA' && survey.numQuestions ==3) { %>
+                                                        <br>
                                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                         <ul id="question1" >
                                                         <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -188,6 +201,7 @@
                                                         </ul>
                                                     
                                                         <% } if(survey.type=='MA' && survey.numQuestions ==4) { %>
+                                                            <br>
                                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                             <ul id="question1" >
                                                             <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -220,6 +234,7 @@
                                                             <li><input type="radio" name=q4 value="<%=survey.q4A4%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q4A4%></p></li>
                                                             </ul>
                                                             <% } if(survey.type=='MA' && survey.numQuestions ==5) { %>
+                                                                <br>
                                                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                                 <ul id="question1" >
                                                                 <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -260,6 +275,7 @@
                                                                 <li><input type="radio" name=q5 value="<%=survey.q5A4%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q5A4%></p></li>
                                                                 </ul>
                                                                 <% } if(survey.type=='MA' && survey.numQuestions ==6) { %>
+                                                                    <br>
                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                                     <ul id="question1" >
                                                                     <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -308,6 +324,7 @@
                                                                     <li><input type="radio" name=q6 value="<%=survey.q6A4%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q6A4%></p></li>
                                                                     </ul>
                                                                     <% } if(survey.type=='MA' && survey.numQuestions ==7) { %>
+                                                                        <br>
                                                                         <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                                         <ul id="question1" >
                                                                         <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -364,6 +381,7 @@
                                                                         <li><input type="radio" name=q7 value="<%=survey.q7A4%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q7A4%></p></li>
                                                                         </ul>
                                                                         <% } if(survey.type=='MA' && survey.numQuestions ==8) { %>
+                                                                            <br>
                                                                             <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                                             <ul id="question1" >
                                                                             <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -428,6 +446,7 @@
                                                                             <li><input type="radio" name=q8 value="<%=survey.q8A4%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q8A4%></p></li>
                                                                             </ul>
                                                                             <% } if(survey.type=='MA' && survey.numQuestions ==9) { %>
+                                                                                <br>
                                                                                 <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                                                 <ul id="question1" >
                                                                                 <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -500,6 +519,7 @@
                                                                                 <li><input type="radio" name=q9 value="<%=survey.q9A4%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q9A4%></p></li>
                                                                                 </ul>
                                                                                 <% } if(survey.type=='MA' && survey.numQuestions ==10) { %>
+                                                                                    <br>
                                                                                     <h4 style="font-family: verdana;" class="questions questionLabels" id="q1"><%= survey.q1%></h4>
                                                                                     <ul id="question1" >
                                                                                     <li><input type="radio" name="q1" id="q1" value="<%=survey.q1A1%>" class="viewA" style="left: 20%"><p class="viewLabels"><%=survey.q1A1%></p></li>
@@ -595,4 +615,3 @@
     
 <%- include ../Partials/bottom_nav.ejs%>  
 <%- include ../Partials/footer.ejs%>  
-<script src="/Scripts/view.js"></script>

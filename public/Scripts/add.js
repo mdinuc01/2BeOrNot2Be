@@ -37,7 +37,7 @@ function remove(){
 
 function addEventListener(){
     
-    history.replaceState(null, 'Short Answer','/survey-list/add/SA/1/86400');
+    history.replaceState(null, 'Short Answer','/survey-list/add/SA/1/1');
     
     for(i = 1; i <= numOfQuestions.value; i++){
         child.insertAdjacentHTML("beforeend",'<label> Question ' + i + ':');

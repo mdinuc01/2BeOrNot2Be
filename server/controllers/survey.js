@@ -323,7 +323,7 @@ module.exports.displayViewPage = (req, res, next) => {
 
 
 module.exports.processViewPage = (req, res, next) => {
- 
+    let today = new Date(Date.now());
    if(req.params.type == 'SA'){
    
     let survey = req.params.id;
@@ -347,7 +347,7 @@ module.exports.processViewPage = (req, res, next) => {
         "a8": req.body.q8A1SAView,
         "a9": req.body.q9A1SAView,
         "a10":req.body.q10A1SAView,
-        "answeredOn": Date.now(),
+        "answeredOn": today,
         "answeredBy": user, 
         "numQuestions": req.params.numQuestions
         
