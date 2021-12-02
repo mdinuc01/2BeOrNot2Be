@@ -52,13 +52,10 @@ module.exports.displayAddPage = (req, res, next) => {
 }
 
 module.exports.processAddPage = (req, res, next) => {
+    let today = new Date(Date.now());
+    let addDay = new Date(Date.now());
+    addDay.setDate(req.params.expires);
     
-    // const today = new Date();
-    // const tomorrow = new Date(today);
-    // let expiry = tomorrow.setDate(tomorrow.getDate() + req.params.expires);
-
-    // console.log(expiry);
-
     let newSurvey = Survey({
         "name": req.body.name,
         "ownedBy": req.user.id,
@@ -124,11 +121,11 @@ module.exports.processAddPage = (req, res, next) => {
         "q10A4": req.body.q10A4,
         "numQuestions": req.params.num, 
         "type": req.params.type,
-        "createdAt": Date.now(),
-        expireAt: req.params.expires
+        "createdAt": today,
+        "expireAt": addDay
     });
 
-    Survey.create(newSurvey, (err, Survey) => {
+    Survey.create(newSurvey, (err) => {
         if(err)
             {
                 console.log(err);

@@ -46,32 +46,19 @@
                                 <option>9</option>
                                 <option>10</option>
                             </select>
-
-                            <%var today = new Date();
-                            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-                            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                            var dateTime = date+' '+time;
-                            function addDays(dateTime, days) {
-                            var result = new Date(dateTime);
-                            result.setDate(result.getDate() + days);
-                            return result;
-                            }%>
-
-                            
-                            
-                            
+ 
                             <p id="expireTitle">Select Number of Days Survey will be available for: </p>
                             <select name="expiry" id="expiry" tabindex="5">
-                                <option value="<%=addDays(Date.parse(dateTime), 1)%>">1</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 2)%>">2</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 3)%>">3</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 4)%>">4</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 5)%>">5</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 6)%>">6</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 7)%>">7</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 8)%>">8</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 9)%>">9</option>
-                                <option value="<%=addDays(Date.parse(dateTime), 10)%>">10</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                                <option value=9>9</option>
+                                <option value=10>10</option>
                             </select>
                         </fieldset>
                         <br>
