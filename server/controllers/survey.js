@@ -13,6 +13,7 @@ let jwt = require('jsonwebtoken');
 let Survey = require('../models/survey');
 let Answer = require('../models/answer');
 const { NotImplemented } = require('http-errors');
+const { double } = require('cli-boxes');
 
 module.exports.displaySurveyList = (req, res, next) => {
     Survey.find((err, surveyList) => {
@@ -53,9 +54,14 @@ module.exports.displayAddPage = (req, res, next) => {
 
 module.exports.processAddPage = (req, res, next) => {
     let today = new Date(Date.now());
-    let addDay = new Date(Date.now());
-    addDay.setDate(req.params.expires);
     
+        var now = new Date();
+        var expire = new Date();
+        var num = req.params.expires;
+        var numI = parseInt(num);
+        
+        expire.setDate(now.getDate() + numI);
+        
     let newSurvey = Survey({
         "name": req.body.name,
         "ownedBy": req.user.id,
@@ -122,7 +128,7 @@ module.exports.processAddPage = (req, res, next) => {
         "numQuestions": req.params.num, 
         "type": req.params.type,
         "createdAt": today,
-        "expireAt": addDay
+        "expireAt": expire
     });
 
     Survey.create(newSurvey, (err) => {
@@ -486,7 +492,7 @@ module.exports.displayExpiredResults = (req, res, next) => {
         }
         else{
          res.render('survey/resultsExpired', 
-        {title: 'Results', 
+        {title: 'Expired Results', 
         answerList: answers,
         id: id,
         surveyToView: surveyAnswered,

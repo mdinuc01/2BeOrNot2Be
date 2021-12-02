@@ -1,40 +1,47 @@
-const json2csv = require('json2csv').parse;
+var link = document.getElementById("download");
 
-//For unique file name
-const dateTime = new Date().toISOString().slice(-24).replace(/\D/g, 
-'').slice(0, 14); 
-
-const filePath = path.join(__dirname, "../../../", "public", "exports", "csv-" + dateTime + ".csv");
-
-let csv; 
-
-const student = await req.db.collection('Student').find({}).toArray();
-
-// Logging student
-// [{id:1,name:"John",country:"USA"},{id:1,name:"Ronny",country:"Germany"}]
-
-const fields = ['id','name','country'];
-
- try {
-        csv = json2csv(booking_info, {fields});
-    } catch (err) {
-        return res.status(500).json({err});
-    }
-
- fs.writeFile(filePath, csv, function (err) {
-        if (err) {
-            return res.json(err).status(500);
+function exportData(){
+    /* Get the HTML data using Element by Id */
+    var table = document.getElementById("results");
+ 
+    /* Declaring array variable */
+    var rows =[];
+ 
+      //iterate through rows of table
+    for(var i=0,row; row = table.rows[i];i++){
+        //rows would be accessed using the "row" variable assigned in the for loop
+        //Get each cell value/column from the row
+        column1 = row.cells[0].innerText;
+        column2 = row.cells[1].innerText;
+        column3 = row.cells[2].innerText;
+        column4 = row.cells[3].innerText;
+        column5 = row.cells[4].innerText;
+ 
+    /* add a new records in the array */
+        rows.push(
+            [
+                column1,
+                column2,
+                column3,
+                column4,
+                column5
+            ]
+        );
+ 
         }
-        else {
-            setTimeout(function () {
-                fs.unlink(filePath, function (err) { // delete this file after 30 seconds
-                if (err) {
-                    console.error(err);
-                }
-                console.log('File has been Deleted');
-            });
+        csvContent = "data:text/csv;charset=utf-8,";
+         /* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
+        rows.forEach(function(rowArray){
+            row = rowArray.join(",");
+            csvContent += row + "\r\n";
+        });
+ 
+        /* create a hidden <a> DOM node and set its download attribute */
+        var encodedUri = encodeURI(csvContent);
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "Stock_Price_Report.csv");
+         /* download the data file named "Stock_Price_Report.csv" */
+        link.click();
+}
 
-        }, 30000);
-            res.download(filePath);
-        }
-    })
+download.addEventListener("click", exportData, false);
